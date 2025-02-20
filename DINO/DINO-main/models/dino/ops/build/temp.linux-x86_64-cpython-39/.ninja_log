@@ -1,0 +1,4 @@
+# ninja log v5
+1	29492	1732008843561636879	/storz/zkyang/DINO/DINO-main/models/dino/ops/build/temp.linux-x86_64-cpython-39/storz/zkyang/DINO/DINO-main/models/dino/ops/src/cpu/ms_deform_attn_cpu.o	1763160439d56543
+2	45882	1732008859953543063	/storz/zkyang/DINO/DINO-main/models/dino/ops/build/temp.linux-x86_64-cpython-39/storz/zkyang/DINO/DINO-main/models/dino/ops/src/vision.o	476e426145725831
+2	62595	1732008876617447683	/storz/zkyang/DINO/DINO-main/models/dino/ops/build/temp.linux-x86_64-cpython-39/storz/zkyang/DINO/DINO-main/models/dino/ops/src/cuda/ms_deform_attn_cuda.o	879044e42cec5beb
