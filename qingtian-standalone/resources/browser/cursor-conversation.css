@@ -1,0 +1,378 @@
+/* Cursor 会话流组件层
+ *
+ * 结构与数值对齐 cursor.com 的 agent 会话视图：Thought 折叠块、工具调用行、
+ * diff 与终端输出。所有取值走 cursor-tokens.css 里的 token，不写字面量。
+ */
+
+/* ── 会话容器 ───────────────────────────────────────────── */
+
+.cx-conversation {
+    display: flex;
+    flex-direction: column;
+    gap: var(--cursor-spacing-4);
+    font-family: var(--qt-font-sans);
+    font-size: var(--cursor-font-size-base);
+    font-weight: var(--cursor-font-weight-normal);
+    line-height: var(--cursor-line-height-base);
+    letter-spacing: var(--cursor-letter-spacing-base);
+    color: var(--cursor-text-primary);
+}
+
+/* ── 折叠块：Thought 与工具调用共用同一套骨架 ───────────── */
+
+.cx-collapsible {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.cx-collapsible-header {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--cursor-spacing-1-5);
+    align-self: flex-start;
+    max-width: 100%;
+    min-height: var(--cursor-height-sm);
+    padding: 0;
+    border: none;
+    border-radius: var(--cursor-radius-sm);
+    background: transparent;
+    font: inherit;
+    color: inherit;
+    text-align: start;
+    cursor: default;
+    outline: none;
+}
+
+.cx-collapsible-header[data-expandable='true'] {
+    cursor: pointer;
+}
+
+.cx-collapsible-header:focus-visible {
+    outline: 2px solid var(--cursor-stroke-focused);
+    outline-offset: -2px;
+}
+
+/* 标题（Thought / Read / Ran …）。hover 时提亮到 primary，这是 Cursor 的行为 */
+.cx-collapsible-action {
+    flex-shrink: 0;
+    color: var(--cursor-text-secondary);
+    font-weight: var(--cursor-font-weight-normal);
+    transition: color var(--cursor-duration-fast) var(--cursor-easing-in-out);
+}
+
+.cx-collapsible-header[data-expandable='true']:hover .cx-collapsible-action {
+    color: var(--cursor-text-primary);
+}
+
+/* 副文本（耗时 / 文件路径 / 命令），超长省略 */
+.cx-collapsible-details {
+    display: block;
+    flex-shrink: 1;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--cursor-text-tertiary);
+    font-family: var(--qt-font-mono);
+    font-size: var(--cursor-font-size-sm);
+}
+
+.cx-collapsible-details[data-tabular='true'] {
+    font-variant-numeric: tabular-nums;
+}
+
+.cx-collapsible-chevron {
+    flex-shrink: 0;
+    color: var(--cursor-icon-tertiary);
+    font-size: var(--cursor-font-size-sm);
+    transition: transform var(--cursor-duration-normal) var(--cursor-easing-out-cubic);
+}
+
+.cx-collapsible[data-open='true'] > .cx-collapsible-header .cx-collapsible-chevron {
+    transform: rotate(90deg);
+}
+
+.cx-collapsible-leading {
+    flex-shrink: 0;
+    color: var(--cursor-icon-tertiary);
+    font-size: var(--cursor-font-size-base);
+}
+
+/* 展开区。用 grid 的 0fr→1fr 做高度过渡，不需要 JS 量高度 */
+.cx-collapsible-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--cursor-accordion-close-duration)
+        var(--cursor-accordion-close-easing);
+}
+
+.cx-collapsible[data-open='true'] > .cx-collapsible-content {
+    grid-template-rows: 1fr;
+    transition: grid-template-rows var(--cursor-accordion-open-duration)
+        var(--cursor-accordion-open-easing);
+}
+
+.cx-collapsible-content > * {
+    overflow: hidden;
+    min-height: 0;
+}
+
+.cx-collapsible-body {
+    padding: var(--cursor-spacing-1-5) 0 var(--cursor-spacing-2) var(--cursor-spacing-4);
+    color: var(--cursor-text-secondary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cx-collapsible-content,
+    .cx-collapsible[data-open='true'] > .cx-collapsible-content,
+    .cx-collapsible-chevron {
+        transition: none;
+    }
+}
+
+/* ── Thinking 流光 ───────────────────────────────────────
+   Cursor 的标志性效果：渐变横扫文字本身（background-clip: text）。
+   40%/50%/60% 三个停靠点造出一道窄亮带，2s 线性循环。 */
+
+@keyframes cx-shine {
+    0% { background-position: 100% 0; }
+    100% { background-position: -100% 0; }
+}
+
+.cx-shine {
+    background-image: linear-gradient(
+        90deg,
+        var(--cursor-text-tertiary) 0%,
+        var(--cursor-text-tertiary) 40%,
+        var(--cursor-text-primary) 50%,
+        var(--cursor-text-tertiary) 60%,
+        var(--cursor-text-tertiary) 100%
+    );
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    will-change: background-position;
+    animation: cx-shine 2s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cx-shine {
+        animation: none;
+        -webkit-text-fill-color: currentColor;
+        color: var(--cursor-text-secondary);
+    }
+}
+
+/* ── 流式光标 ───────────────────────────────────────────── */
+
+@keyframes cx-caret-blink {
+    0%, 45% { opacity: 1; }
+    55%, 100% { opacity: 0; }
+}
+
+.cx-caret {
+    display: inline-block;
+    width: var(--cursor-spacing-0-5);
+    height: var(--cursor-line-height-base);
+    margin-inline-start: var(--cursor-spacing-0-5);
+    vertical-align: text-bottom;
+    background: var(--cursor-text-primary);
+    border-radius: var(--cursor-radius-xs);
+    animation: cx-caret-blink 1.1s steps(1, end) infinite;
+}
+
+/* ── 工具调用行 ─────────────────────────────────────────── */
+
+.cx-tool {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.cx-tool + .cx-tool {
+    margin-top: var(--cursor-spacing-0-5);
+}
+
+/* 状态点：跑动时黄色呼吸，失败红色，成功不显示 */
+.cx-tool-status {
+    flex-shrink: 0;
+    width: var(--cursor-spacing-1-5);
+    height: var(--cursor-spacing-1-5);
+    border-radius: var(--cursor-radius-full);
+}
+
+@keyframes cx-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .35; }
+}
+
+.cx-tool-status[data-state='loading'] {
+    background: var(--cursor-bg-yellow-primary);
+    animation: cx-pulse 1.4s var(--cursor-easing-in-out) infinite;
+}
+
+.cx-tool-status[data-state='error'] {
+    background: var(--cursor-bg-red-primary);
+}
+
+.cx-tool-status[data-state='completed'] {
+    display: none;
+}
+
+/* ── 展开内容：代码 / 终端 / diff ───────────────────────── */
+
+.cx-code {
+    margin: 0;
+    padding: var(--cursor-spacing-2) var(--cursor-spacing-2-5);
+    border: 1px solid var(--cursor-stroke-tertiary);
+    border-radius: var(--cursor-radius-base);
+    background: var(--cursor-bg-editor);
+    font-family: var(--qt-font-mono);
+    font-size: var(--cursor-font-size-sm);
+    line-height: var(--cursor-line-height-sm);
+    color: var(--cursor-text-secondary);
+    overflow-x: auto;
+    white-space: pre;
+    tab-size: 4;
+}
+
+.cx-terminal {
+    color: var(--cursor-terminal-foreground, var(--cursor-text-secondary));
+    background: var(--cursor-bg-chrome);
+}
+
+/* diff：整行底色用 Cursor 的 diff token，行首标记单独着色 */
+.cx-diff {
+    display: block;
+}
+
+.cx-diff-line {
+    display: block;
+    padding-inline: var(--cursor-spacing-1);
+    margin-inline: calc(var(--cursor-spacing-2-5) * -1);
+    padding-inline-start: var(--cursor-spacing-2-5);
+}
+
+.cx-diff-line[data-kind='add'] {
+    background: var(--cursor-bg-diff-inserted);
+    color: var(--cursor-text-git-added-primary, var(--cursor-added));
+}
+
+.cx-diff-line[data-kind='del'] {
+    background: var(--cursor-bg-diff-removed);
+    color: var(--cursor-text-git-removed-primary, var(--cursor-removed));
+}
+
+.cx-diff-line[data-kind='hunk'] {
+    color: var(--cursor-text-tertiary);
+}
+
+.cx-diff-stat {
+    display: inline-flex;
+    gap: var(--cursor-spacing-1-5);
+    font-family: var(--qt-font-mono);
+    font-size: var(--cursor-font-size-sm);
+    font-variant-numeric: tabular-nums;
+}
+
+.cx-diff-stat .cx-add { color: var(--cursor-added); }
+.cx-diff-stat .cx-del { color: var(--cursor-removed); }
+
+/* ── 正文 markdown ──────────────────────────────────────── */
+
+.cx-markdown {
+    color: var(--cursor-text-primary);
+    line-height: var(--cursor-line-height-lg);
+}
+
+.cx-markdown > *:first-child { margin-top: 0; }
+.cx-markdown > *:last-child { margin-bottom: 0; }
+
+.cx-markdown p { margin: 0 0 var(--cursor-spacing-3); }
+
+.cx-markdown h1,
+.cx-markdown h2,
+.cx-markdown h3 {
+    margin: var(--cursor-spacing-5) 0 var(--cursor-spacing-2);
+    font-weight: var(--cursor-font-weight-semibold);
+    letter-spacing: var(--cursor-letter-spacing-lg);
+}
+
+.cx-markdown h1 { font-size: var(--cursor-font-size-lg); }
+.cx-markdown h2 { font-size: var(--cursor-font-size-lg); }
+.cx-markdown h3 { font-size: var(--cursor-font-size-base); }
+
+.cx-markdown ul,
+.cx-markdown ol {
+    margin: 0 0 var(--cursor-spacing-3);
+    padding-inline-start: var(--cursor-spacing-5);
+}
+
+.cx-markdown li { margin-bottom: var(--cursor-spacing-1); }
+
+.cx-markdown code {
+    padding: var(--cursor-spacing-0-25) var(--cursor-spacing-1);
+    border-radius: var(--cursor-radius-xs);
+    background: var(--cursor-bg-tertiary);
+    font-family: var(--qt-font-mono);
+    font-size: var(--cursor-font-size-sm);
+}
+
+.cx-markdown pre {
+    margin: 0 0 var(--cursor-spacing-3);
+    padding: var(--cursor-spacing-3);
+    border: 1px solid var(--cursor-stroke-tertiary);
+    border-radius: var(--cursor-radius-lg);
+    background: var(--cursor-bg-editor);
+    overflow-x: auto;
+}
+
+.cx-markdown pre code {
+    padding: 0;
+    background: none;
+    line-height: var(--cursor-line-height-base);
+}
+
+.cx-markdown blockquote {
+    margin: 0 0 var(--cursor-spacing-3);
+    padding-inline-start: var(--cursor-spacing-3);
+    border-inline-start: 2px solid var(--cursor-stroke-secondary);
+    color: var(--cursor-text-secondary);
+}
+
+.cx-markdown table {
+    margin: 0 0 var(--cursor-spacing-3);
+    border-collapse: collapse;
+    font-size: var(--cursor-font-size-sm);
+}
+
+.cx-markdown th,
+.cx-markdown td {
+    padding: var(--cursor-spacing-1) var(--cursor-spacing-2-5);
+    border: 1px solid var(--cursor-stroke-tertiary);
+    text-align: start;
+}
+
+.cx-markdown th {
+    background: var(--cursor-bg-quaternary);
+    font-weight: var(--cursor-font-weight-medium);
+}
+
+.cx-markdown a {
+    color: var(--cursor-text-accent, var(--cursor-accent));
+    text-decoration: none;
+}
+
+.cx-markdown a:hover { text-decoration: underline; }
+
+/* 流式期间新到的文本淡入，避免逐字硬跳 */
+@keyframes cx-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.cx-markdown[data-streaming='true'] > *:last-child {
+    animation: cx-fade-in var(--cursor-duration-slow) var(--cursor-easing-out) both;
+}

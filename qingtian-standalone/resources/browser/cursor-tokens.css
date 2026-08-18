@@ -32,6 +32,39 @@
     --cursor-shadow-secondary: #00000033;
     --cursor-shadow-tertiary: #0000001a;
 
+    /* ── 排版 ── */
+    /* normal 是 418 而不是 400，CursorGothic 是可变字体，这个半档是刻意的 */
+    --cursor-font-weight-normal: 418;
+    --cursor-font-weight-medium: 500;
+    --cursor-font-weight-semibold: 600;
+    --cursor-font-size-xs: 11px;
+    --cursor-font-size-sm: 12px;
+    --cursor-font-size-base: 13px;
+    --cursor-font-size-lg: 14px;
+    --cursor-line-height-xs: 14px;
+    --cursor-line-height-sm: 16px;
+    --cursor-line-height-base: 18px;
+    --cursor-line-height-lg: 22px;
+
+    /* ── 控件高度 ── */
+    --cursor-height-xs: 20px;
+    --cursor-height-sm: 24px;
+    --cursor-height-base: 28px;
+    --cursor-height-lg: 32px;
+
+    /* ── 过渡时长 ── */
+    --cursor-duration-instant: 50ms;
+    --cursor-duration-fast: .1s;
+    --cursor-duration-normal: .15s;
+    --cursor-duration-slow: .2s;
+    --cursor-duration-slower: .3s;
+
+    /* ── 折叠动效（展开慢、收起快，Cursor 的原始不对称时序）── */
+    --cursor-accordion-open-duration: .26s;
+    --cursor-accordion-open-easing: cubic-bezier(.33, 1, .68, 1);
+    --cursor-accordion-close-duration: .18s;
+    --cursor-accordion-close-easing: cubic-bezier(.32, 0, .67, 0);
+
     /* ── 间距刻度 ── */
     --cursor-spacing-0-25: 1px;
     --cursor-spacing-0-5: 2px;

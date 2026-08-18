@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>晴天无限 MCP · 浏览器端</title>
+    <link rel="stylesheet" href="/cursor-tokens.css">
+    <link rel="stylesheet" href="/cursor-icons.css">
+    <link rel="stylesheet" href="/cursor-conversation.css">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="app">
+        <!-- 左侧通道栏 -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <div class="brand">
+                    <span class="brand-logo">QT</span>
+                    <div class="brand-meta">
+                        <div class="brand-name">晴天无限 MCP</div>
+                        <div class="brand-tag">浏览器端 · Browser</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">
+                    <span>通道</span>
+                    <div class="sidebar-section-actions">
+                        <button class="icon-btn" id="btn-add-channel" title="新增通道">+</button>
+                        <button class="icon-btn" id="btn-remove-channel" title="删除最后一个通道">−</button>
+                    </div>
+                </div>
+                <div class="channel-list" id="channel-list"></div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">
+                    <span>MCP 状态</span>
+                </div>
+                <div class="mcp-status-card" id="mcp-status-card">
+                    <div class="mcp-status-row">
+                        <span class="mcp-status-label">模式</span>
+                        <span class="mcp-status-value" id="mcp-mode">Stdio</span>
+                    </div>
+                    <div class="mcp-status-row">
+                        <span class="mcp-status-label">连接</span>
+                        <span class="mcp-status-value" id="mcp-client-count">0</span>
+                    </div>
+                    <div class="mcp-status-row">
+                        <span class="mcp-status-label">剩余时间</span>
+                        <span class="mcp-status-value" id="license-remaining">--:--:--</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">
+                    <span>快捷操作</span>
+                </div>
+                <button class="side-action" id="btn-copy-prompt">
+                    <span class="side-action-icon">📋</span>
+                    <div class="side-action-body">
+                        <div class="side-action-title">复制启动协议</div>
+                        <div class="side-action-desc">粘贴到 Cursor 聊天框唤醒 AI</div>
+                    </div>
+                </button>
+                <button class="side-action" id="btn-send-start-prompt">
+                    <span class="side-action-icon">▶</span>
+                    <div class="side-action-body">
+                        <div class="side-action-title">一键发送开场白</div>
+                        <div class="side-action-desc">自动打开 Cursor 对话并发送</div>
+                    </div>
+                </button>
+                <button class="side-action" id="btn-copy-recovery">
+                    <span class="side-action-icon">↩</span>
+                    <div class="side-action-body">
+                        <div class="side-action-title">自动恢复上下文</div>
+                        <div class="side-action-desc">直接投递到通道队列，窗口自动接手</div>
+                    </div>
+                </button>
+                <button class="side-action" id="btn-open-history">
+                    <span class="side-action-icon">📜</span>
+                    <div class="side-action-body">
+                        <div class="side-action-title">指令历史</div>
+                        <div class="side-action-desc">查看 / 搜索 / 导出 MD · JSON</div>
+                    </div>
+                </button>
+                <button class="side-action" id="btn-clear-channel">
+                    <span class="side-action-icon">🗑</span>
+                    <div class="side-action-body">
+                        <div class="side-action-title">清空当前通道</div>
+                        <div class="side-action-desc">清队列 + 清 AI 回复缓存</div>
+                    </div>
+                </button>
+                <button class="side-action" id="btn-clear-history">
+                    <span class="side-action-icon">🧹</span>
+                    <div class="side-action-body">
+                        <div class="side-action-title">清空浏览器历史</div>
+                        <div class="side-action-desc">仅清本地记录，不影响插件</div>
+                    </div>
+                </button>
+            </div>
+
+            <div class="sidebar-section">
+                <div class="sidebar-section-title">
+                    <span>群聊恢复</span>
+                </div>
+                <div class="team-recovery-card" id="team-recovery-card">
+                    <select id="team-recovery-group"></select>
+                    <div class="team-recovery-status" id="team-recovery-status">正在同步群聊状态…</div>
+                    <button class="side-action compact" id="btn-team-recovery" type="button">
+                        <span class="side-action-icon">↻</span>
+                        <div class="side-action-body">
+                            <div class="side-action-title">恢复群聊上下文</div>
+                            <div class="side-action-desc">成员结构匹配后投递到群内通道</div>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <div class="sidebar-footer">
+                <div class="ws-status" id="ws-status" data-state="connecting">
+                    <span class="dot"></span>
+                    <span class="label">连接中…</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- 聊天主区 -->
+        <main class="main">
+            <header class="topbar">
+                <button class="icon-btn sidebar-toggle" id="btn-toggle-sidebar" title="切换侧边栏">☰</button>
+                <div class="topbar-title">
+                    <span class="topbar-channel-name" id="topbar-channel-name">CH-1</span>
+                    <span class="topbar-channel-sub" id="topbar-channel-sub">当前通道</span>
+                </div>
+                <div class="view-switch" id="view-switch">
+                    <button class="view-switch-btn active" id="btn-view-channel" type="button">通道</button>
+                    <button class="view-switch-btn" id="btn-view-team" type="button">群聊</button>
+                </div>
+                <div class="topbar-tools">
+                    <div class="ai-presence unknown" id="ai-presence" title="AI 状态">
+                        <span class="ai-presence-dot"></span>
+                        <span class="ai-presence-label" id="ai-presence-text">检测中…</span>
+                    </div>
+                    <button class="icon-btn" id="btn-toggle-search" title="搜索当前通道">🔎</button>
+                    <button class="icon-btn" id="btn-theme-toggle" title="切换主题">🌙</button>
+                    <button class="icon-btn" id="btn-open-settings" title="设置">⚙</button>
+                </div>
+            </header>
+
+            <!-- 搜索条（默认隐藏） -->
+            <div class="search-bar hidden" id="search-bar">
+                <input type="text" id="search-input" placeholder="搜索当前通道消息内容…" />
+                <span class="search-count" id="search-count">0</span>
+                <button class="icon-btn" id="btn-close-search" title="关闭搜索">✕</button>
+            </div>
+
+            <div class="team-toolbar hidden" id="team-toolbar">
+                <select id="team-group-select"></select>
+                <div class="team-toolbar-status" id="team-toolbar-status">选择群组后开始协作</div>
+                <button class="icon-btn" id="btn-team-create" type="button" title="新建群聊">+</button>
+                <button class="icon-btn" id="btn-team-delete" type="button" title="删除当前群聊">×</button>
+                <button class="btn-soft" id="btn-team-refresh" type="button">刷新</button>
+            </div>
+
+            <div class="messages" id="messages">
+                <div class="msg msg-system">
+                    <div class="msg-bubble">
+                        <p><strong>欢迎使用浏览器端</strong></p>
+                        <p>这是和 Cursor 插件共享数据的轻量控制面板，支持：发送消息、接收 AI 回复、多通道切换、复制启动协议。</p>
+                        <p>附件上传、账号管理等请继续在 Cursor 侧栏完成。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 思考气泡模板（无流式事件时的兜底） -->
+            <template id="thinking-bubble-template">
+                <div class="msg msg-thinking" data-role="thinking">
+                    <div class="msg-bubble thinking-bubble">
+                        <span class="thinking-dots"><span></span><span></span><span></span></span>
+                        <span class="thinking-text">AI 正在思考…</span>
+                        <button type="button" class="thinking-close" title="收起">✕</button>
+                    </div>
+                </div>
+            </template>
+
+            <!-- Agent 准实时过程时间线（agent_stream） -->
+            <template id="agent-timeline-template">
+                <div class="msg msg-agent-timeline" data-role="agent-timeline">
+                    <div class="agent-timeline">
+                        <div class="agent-timeline-bound hidden"></div>
+                        <div class="agent-timeline-summary hidden">
+                            <button type="button" class="agent-timeline-toggle">
+                                <span class="chevron">›</span>
+                                <span class="summary-text">已完成 · 0 步</span>
+                            </button>
+                        </div>
+                        <div class="agent-timeline-items"></div>
+                        <div class="agent-timeline-generating">
+                            <span class="agent-cursor">▍</span>
+                            <span class="agent-generating-text">Generating…</span>
+                        </div>
+                    </div>
+                    <button type="button" class="agent-scroll-bottom hidden" title="回到底部">↓</button>
+                </div>
+            </template>
+
+            <footer class="composer">
+                <!-- 快捷指令行 -->
+                <div class="quick-commands-wrap">
+                    <div class="quick-commands-row" id="quick-commands">
+                        <div class="quick-cmd-empty">加载快捷指令…</div>
+                    </div>
+                    <div class="quick-commands-tools">
+                        <button class="icon-btn quick-cmd-add" id="btn-quick-add" type="button" title="新增快捷指令">＋</button>
+                        <button class="icon-btn quick-cmd-reset" id="btn-quick-reset" type="button" title="恢复默认">↺</button>
+                    </div>
+                </div>
+                <div class="quick-commands-form hidden" id="quick-commands-form">
+                    <input id="quick-cmd-label" type="text" placeholder="按钮文字（如：写 README）" maxlength="40" />
+                    <textarea id="quick-cmd-text" rows="2" placeholder="点击后填入输入框的内容…" maxlength="2000"></textarea>
+                    <div class="quick-commands-form-actions">
+                        <button class="btn-soft" id="btn-quick-save" type="button">保存</button>
+                        <button class="btn-ghost" id="btn-quick-cancel" type="button">取消</button>
+                    </div>
+                </div>
+
+                <!-- 已选附件 -->
+                <div class="attachments-row hidden" id="attachments-row">
+                    <div class="attachments-list" id="attachments-list"></div>
+                </div>
+
+                <div class="composer-box" id="composer-drop">
+                    <textarea id="input" rows="3" placeholder="输入消息，Enter 发送（可在设置改为 Ctrl+Enter），拖拽/粘贴图片"></textarea>
+                    <div class="mention-dropdown hidden" id="mention-dropdown"></div>
+                    <div class="composer-bar">
+                        <div class="composer-left">
+                            <button class="btn-soft" id="btn-attach-file" type="button" title="选择本地文件">📎 文件</button>
+                            <button class="btn-soft" id="btn-attach-image" type="button" title="选择图片">🖼 图片</button>
+                            <span class="composer-hint" id="composer-hint">CH-1 · Enter 发送</span>
+                        </div>
+                        <button class="btn-primary" id="btn-send">发送</button>
+                    </div>
+                </div>
+                <input type="file" id="hidden-file-picker" multiple style="display:none" />
+                <input type="file" id="hidden-image-picker" accept="image/*" multiple style="display:none" />
+            </footer>
+        </main>
+    </div>
+
+    <!-- 设置抽屉 -->
+    <div class="drawer-backdrop hidden" id="drawer-backdrop"></div>
+    <aside class="drawer drawer-right hidden" id="settings-drawer">
+        <div class="drawer-head">
+            <div>
+                <div class="drawer-kicker">账号管理</div>
+                <div class="drawer-title">账号保存、切换与用量</div>
+            </div>
+            <button class="icon-btn" id="btn-close-settings" type="button">✕</button>
+        </div>
+        <div class="drawer-body">
+            <div class="setting-row">
+                <div class="setting-info">
+                    <div class="setting-label">发送方式</div>
+                    <div class="setting-desc">按 Enter 发送，或 Ctrl+Enter 发送。</div>
+                </div>
+                <div class="setting-ctrl">
+                    <select id="setting-send-mode">
+                        <option value="enter">Enter 发送</option>
+                        <option value="ctrl-enter">Ctrl+Enter 发送</option>
+                    </select>
+                </div>
+            </div>
+            <div class="setting-row">
+                <div class="setting-info">
+                    <div class="setting-label">字体大小</div>
+                    <div class="setting-desc">调整消息气泡中的基础字号。</div>
+                </div>
+                <div class="setting-ctrl">
+                    <select id="setting-font-size">
+                        <option value="small">小</option>
+                        <option value="medium" selected>中</option>
+                        <option value="large">大</option>
+                    </select>
+                </div>
+            </div>
+            <div class="setting-row">
+                <div class="setting-info">
+                    <div class="setting-label">主题</div>
+                    <div class="setting-desc">深色 / 浅色 / 跟随系统。</div>
+                </div>
+                <div class="setting-ctrl">
+                    <select id="setting-theme-mode">
+                        <option value="system">跟随系统</option>
+                        <option value="dark">深色</option>
+                        <option value="light">浅色</option>
+                    </select>
+                </div>
+            </div>
+            <div class="setting-row">
+                <div class="setting-info">
+                    <div class="setting-label">桌面通知</div>
+                    <div class="setting-desc">AI 回复且本页失焦时弹出通知。</div>
+                </div>
+                <div class="setting-ctrl">
+                    <label class="setting-inline">
+                        <input type="checkbox" id="setting-notify-desktop" />
+                        <span>启用</span>
+                    </label>
+                </div>
+            </div>
+            <div class="setting-row">
+                <div class="setting-info">
+                    <div class="setting-label">保活机制</div>
+                    <div class="setting-desc">AI 空闲时持续轮询等待消息。与插件同步。</div>
+                </div>
+                <div class="setting-ctrl">
+                    <label class="setting-inline">
+                        <input type="checkbox" id="setting-keepalive-enabled" />
+                        <span>启用</span>
+                    </label>
+                </div>
+            </div>
+            <div class="setting-row" id="setting-keepalive-minutes-row">
+                <div class="setting-info">
+                    <div class="setting-label">保活间隔</div>
+                    <div class="setting-desc">1 ~ 120 分钟。</div>
+                </div>
+                <div class="setting-ctrl">
+                    <input type="number" id="setting-keepalive-minutes" min="1" max="120" value="45" style="width:72px" />
+                    <span style="margin-left:4px;opacity:0.7">分钟</span>
+                </div>
+            </div>
+            <div class="setting-row">
+                <div class="setting-info">
+                    <div class="setting-label">激活状态</div>
+                    <div class="setting-desc" id="license-desc">加载中…</div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- 历史抽屉 -->
+    <aside class="drawer drawer-right hidden" id="history-drawer">
+        <div class="drawer-head">
+            <div>
+                <div class="drawer-kicker">指令历史</div>
+                <div class="drawer-title">当前浏览器端记录</div>
+            </div>
+            <button class="icon-btn" id="btn-close-history" type="button">✕</button>
+        </div>
+        <div class="drawer-body">
+            <div class="history-tools">
+                <input type="text" id="history-search" placeholder="搜索…" />
+                <select id="history-type-filter">
+                    <option value="all">全部类型</option>
+                    <option value="user">用户</option>
+                    <option value="reply">AI 回复</option>
+                    <option value="error">错误</option>
+                </select>
+                <button class="btn-soft" id="btn-export-md" type="button">导出 MD</button>
+                <button class="btn-soft" id="btn-export-json" type="button">导出 JSON</button>
+            </div>
+            <div class="history-summary" id="history-summary">共 0 条</div>
+            <div class="history-list" id="history-list"></div>
+        </div>
+    </aside>
+
+    <div class="recovery-modal hidden" id="recovery-transfer-modal">
+        <div class="recovery-modal-overlay" id="recovery-transfer-overlay"></div>
+        <div class="recovery-modal-dialog">
+            <div class="recovery-modal-head">
+                <div>
+                    <div class="drawer-kicker">恢复上下文</div>
+                    <div class="drawer-title">恢复 / 接管</div>
+                    <div class="recovery-modal-subtitle">当前选中通道作为恢复来源；需要接管时再选择目标通道。</div>
+                </div>
+                <button class="icon-btn" id="btn-recovery-transfer-close" type="button">✕</button>
+            </div>
+            <div class="recovery-modal-body">
+                <div class="recovery-field">
+                    <div class="setting-label">恢复来源</div>
+                    <div class="recovery-source" id="recovery-transfer-source">CH-1</div>
+                </div>
+                <div class="recovery-field">
+                    <div class="setting-label">恢复方式</div>
+                    <label class="recovery-option">
+                        <input type="radio" name="recovery-transfer-mode" value="current" checked />
+                        <span class="recovery-option-copy">
+                            <strong>当前通道恢复</strong>
+                            <span>把当前通道的归档上下文重新投递给本通道。</span>
+                        </span>
+                    </label>
+                    <label class="recovery-option">
+                        <input type="radio" name="recovery-transfer-mode" value="transfer" />
+                        <span class="recovery-option-copy">
+                            <strong>转移到其他通道</strong>
+                            <span>当原通道挂掉时，把当前通道的上下文交给另一个通道接手。</span>
+                        </span>
+                    </label>
+                </div>
+                <div class="recovery-field hidden" id="recovery-transfer-target-section">
+                    <div class="setting-label">目标通道</div>
+                    <div class="recovery-target-list" id="recovery-transfer-target-list"></div>
+                </div>
+            </div>
+            <div class="recovery-modal-actions">
+                <button class="btn-ghost" id="btn-recovery-transfer-cancel" type="button">取消</button>
+                <button class="btn-primary" id="btn-recovery-transfer-confirm" type="button">开始恢复</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="recovery-modal hidden" id="team-recovery-modal">
+        <div class="recovery-modal-overlay" id="team-recovery-overlay"></div>
+        <div class="recovery-modal-dialog">
+            <div class="recovery-modal-head">
+                <div>
+                    <div class="drawer-kicker">群聊恢复</div>
+                    <div class="drawer-title">群聊恢复</div>
+                    <div class="recovery-modal-subtitle" id="team-recovery-modal-subtitle">先校验群聊成员结构，再投递恢复上下文。</div>
+                </div>
+                <button class="icon-btn" id="btn-team-recovery-close" type="button">✕</button>
+            </div>
+            <div class="recovery-modal-body">
+                <div class="recovery-check-card">
+                    <div class="setting-label">当前状态</div>
+                    <div class="recovery-check-text" id="team-recovery-restore-desc">要求成员结构一致，且所有成员已接入 Cursor。</div>
+                </div>
+                <div class="setting-label">恢复方式</div>
+                <div class="recovery-mode-list">
+                    <label class="recovery-mode-option">
+                        <input name="team-recovery-mode" type="radio" value="restore" checked />
+                        <span>
+                            <strong>恢复当前群聊</strong>
+                            <small>成员没有变化时使用。只让一个主持通道确认，其它成员静默吸收。</small>
+                        </span>
+                    </label>
+                    <label class="recovery-mode-option">
+                        <input name="team-recovery-mode" type="radio" value="takeover" />
+                        <span>
+                            <strong>成员接管</strong>
+                            <small>成员掉线或要换人时使用。新通道继承旧成员身份和任务。</small>
+                        </span>
+                    </label>
+                </div>
+                <div class="recovery-panel" id="team-recovery-moderator-panel">
+                    <div class="setting-label">恢复执行</div>
+                    <div class="recovery-help" id="team-recovery-moderator-list">系统会自动选择一个已接入成员发出“已恢复”的可见确认，其它成员静默吸收。</div>
+                </div>
+                <div class="recovery-panel hidden" id="team-recovery-takeover-panel">
+                    <div class="setting-label">接管设置</div>
+                    <div class="recovery-help">选择要被接替的旧成员，再选择一个尚未入群且已接入 Cursor 的目标通道。</div>
+                    <div class="team-takeover-grid" id="team-recovery-takeover-grid">
+                        <label>
+                            <span>来源成员</span>
+                            <select id="team-recovery-source"></select>
+                        </label>
+                        <label>
+                            <span>接管目标</span>
+                            <select id="team-recovery-target"></select>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="recovery-modal-actions">
+                <button class="btn-soft" id="btn-team-recovery-cancel" type="button">取消</button>
+                <button class="btn-primary" id="btn-team-recovery-confirm" type="button">开始恢复</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="recovery-modal hidden" id="team-group-modal">
+        <div class="recovery-modal-overlay" id="team-group-overlay"></div>
+        <div class="recovery-modal-dialog team-group-dialog">
+            <div class="recovery-modal-head">
+                <div>
+                    <div class="drawer-kicker">群聊管理</div>
+                    <div class="drawer-title">新建群聊</div>
+                    <div class="recovery-modal-subtitle">只显示已经和 Cursor 建立连接的通道；创建后会同步到插件和 Cursor 群聊工作台。</div>
+                </div>
+                <button class="icon-btn" id="btn-team-group-close" type="button">×</button>
+            </div>
+            <div class="recovery-modal-body">
+                <div class="team-group-form-grid">
+                    <label>
+                        <span class="setting-label">群名称</span>
+                        <input id="team-group-name" class="team-group-input" type="text" placeholder="例如：前后端联调组" maxlength="60" />
+                    </label>
+                    <label>
+                        <span class="setting-label">目标，可选</span>
+                        <input id="team-group-goal" class="team-group-input" type="text" placeholder="这个群要解决什么问题" maxlength="180" />
+                    </label>
+                </div>
+                <div class="recovery-field">
+                    <div class="setting-label">选择成员与身份</div>
+                    <div class="team-group-member-list" id="team-group-member-list"></div>
+                </div>
+            </div>
+            <div class="recovery-modal-actions">
+                <button class="btn-soft" id="btn-team-group-cancel" type="button">取消</button>
+                <button class="btn-primary" id="btn-team-group-confirm" type="button">创建群聊</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/cursor-tool-verbs.js"></script>
+    <script src="/cursor-conversation.js"></script>
+    <script src="/client.js"></script>
+</body>
+</html>
