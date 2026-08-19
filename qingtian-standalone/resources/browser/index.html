@@ -227,6 +227,19 @@
                     </div>
                 </div>
 
+                <!-- 排队待发消息：暂存在指令台上方，上一条执行完成后自动送出 -->
+                <div class="outbox-row hidden" id="outbox-row">
+                    <div class="outbox-head">
+                        <span class="outbox-title">排队中 <span class="outbox-count" id="outbox-count">0</span></span>
+                        <span class="outbox-hint" id="outbox-hint">上一条执行完成后自动发送</span>
+                        <div class="outbox-head-actions">
+                            <button class="outbox-mini-btn" id="btn-outbox-send-now" type="button" title="立刻发送队首消息，不等上一条完成">立即发送</button>
+                            <button class="outbox-mini-btn danger" id="btn-outbox-clear" type="button" title="清空本通道排队消息">清空</button>
+                        </div>
+                    </div>
+                    <div class="outbox-list" id="outbox-list"></div>
+                </div>
+
                 <!-- 已选附件 -->
                 <div class="attachments-row hidden" id="attachments-row">
                     <div class="attachments-list" id="attachments-list"></div>
