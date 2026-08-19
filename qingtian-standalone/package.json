@@ -1,0 +1,39 @@
+{
+  "name": "qingtian-standalone",
+  "version": "0.1.0",
+  "private": true,
+  "description": "晴天 MCP 网页端独立版：从 VSCode 插件剥离出的 HTTP + WebSocket 服务",
+  "main": "src/index.js",
+  "bin": {
+    "qingtian-standalone": "bin/qingtian-standalone.js"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "watchdog": "node src/watchdog.js",
+    "init": "node bin/qingtian-standalone.js init",
+    "test": "node test/smoke.js && node test/loop.js && node test/watchdog.js && node test/portable.js",
+    "test:smoke": "node test/smoke.js",
+    "test:loop": "node test/loop.js",
+    "test:watchdog": "node test/watchdog.js",
+    "test:portable": "node test/portable.js",
+    "test:tools": "node test/tools.js",
+    "test:outbox": "node test/outbox-queue.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "ws": "^8.20.0"
+  },
+  "bundledDependencies": [
+    "ws"
+  ],
+  "files": [
+    "bin",
+    "src",
+    "test",
+    "resources",
+    "mcp-server",
+    "README.md"
+  ]
+}
