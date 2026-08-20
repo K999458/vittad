@@ -488,7 +488,8 @@
     const starMeta = s.stars ? `<span>★ ${fmtNum(s.stars)} ${t("d_stars")}</span>` : "";
 
     wrap.innerHTML = `
-    <div class="d-main detail-ambient" data-cat="${esc(s.cat)}">
+    <div class="detail-ambient" data-cat="${esc(s.cat)}" aria-hidden="true"></div>
+    <div class="d-main" data-cat="${esc(s.cat)}">
       <h1 class="d-title">${esc(s.name)}</h1>
       <div class="d-sub">
         <span class="d-cat">${icon(s.cat, 15)} ${c ? (LANG === "zh" ? c.zh : c.en) : ""}</span>
