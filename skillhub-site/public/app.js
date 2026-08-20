@@ -512,16 +512,21 @@
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M6.5 9.5L12 15l5.5-5.5M4 19h16"/></svg>
         ${t("d_download")}
       </a>
-      <div>
-        <div class="meta-list" style="margin-bottom:8px"><div class="row"><span class="k">${t("d_install_title")}</span></div></div>
-        <div class="install-tabs" id="instTabs">
-          ${INSTALL_TARGETS.map((x, i) => `<button class="${i === 0 ? "on" : ""}" data-t="${x.id}">${x.label}</button>`).join("")}
+      <details class="install-fold">
+        <summary>
+          <span>${t("d_install_toggle")}</span>
+          <svg class="fold-chev" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 9.5L12 16l6.5-6.5"/></svg>
+        </summary>
+        <div class="fold-body">
+          <div class="install-tabs" id="instTabs">
+            ${INSTALL_TARGETS.map((x, i) => `<button class="${i === 0 ? "on" : ""}" data-t="${x.id}">${x.label}</button>`).join("")}
+          </div>
+          <div class="install-cmd" id="instCmd" title="${t("d_copy_hint")}">
+            <span id="instCmdText"></span>
+            <svg class="copy-ic" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+          </div>
         </div>
-        <div class="install-cmd" id="instCmd" title="${t("d_copy_hint")}">
-          <span id="instCmdText"></span>
-          <svg class="copy-ic" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="9" width="11" height="11" rx="2.5"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
-        </div>
-      </div>
+      </details>
     </div>
     <aside class="d-side">
       <div class="meta-list">
