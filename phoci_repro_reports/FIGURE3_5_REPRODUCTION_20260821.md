@@ -32,7 +32,30 @@
 
 Figure 5 的全部规则计数与 CRISPRi 行数与 `outputs/paper_figures_global_mns_cap150k_main_mixed/figure5_myb_crispri/` 逐项一致；Figure 3 四个 case 结构一致（chr14、8 聚类），节点数因 maxspan 预计算分片覆盖略有差异（18172 vs 旧版 18409），属预期。
 
+## Supplementary Figure 2（CNS 扰动打分 / 距离扫描 / 特征 delta）
+
+- 状态：完成，status=0
+- GM12878 模型 + GM12878 combined manifest，chr14 76–81Mb 区域，104,303 pairs，mean_score_delta=0.136、mean_span_delta=55.4
+- 产物：supplementary_figure2a_c（CNS 分数）、d_f（距离扫描）、h_j（特征 delta）三组面板 png/pdf + cns_distance_scan.tsv + selected_override_examples.tsv + summary
+- 41MB 的 cns_perturbation_pairs.tsv 是可重生成中间产物，已 gitignore
+
+## Supplementary Figure 9（负例采样对比）
+
+- 状态：完成，status=0（single-thread random-walk 采样，CPU 密集，约 5 分钟）
+- Comprehensive 模型 + GM12878 test 全染色体（60 windows），每方法 2,000,000 候选（random_choice / random_walk 各 2M）
+- 关键结论（与原文定性一致）：random_walk 候选 mean score 0.698 / max 0.991，random_choice 仅 0.140 / 0.989；过阈值比例 random_walk vs random_choice：>0.5 为 83.7% vs 2.44%，>0.88 为 18.7% vs 0.046%，>0.95 为 3.80% vs 0.008%——random-walk 采样产生高分多元互作候选的效率高出两个数量级
+- 产物：supplementary_figure9c_d_pairwise_maps、9e_threshold_fraction 面板 png/pdf + sampling_threshold_summary.tsv + summary
+- 705MB pairwise_counts.tsv 与 609MB predictions.tsv 是可重生成中间产物，已 gitignore
+
+## 同类 bug 与补丁
+
+`score_supplementary_figure2_cns.py`、`score_supplementary_figure9_sampling.py` 的 `load_model` 与 figure3/5 同样缺 `implementation` 参数，已在 `patched_scripts/` 一并修复（均从 checkpoint args 读 `model_implementation`）。
+
+## 登录说明
+
+`ssh ysu@node4` 已配好免密（经 telnet 用 `Ysu2024!` 首次登录后把本机公钥写入 ysu 的 authorized_keys），ysu 身份可直接读写项目目录；此前用的 ywjiang2 免密通道仍可用。
+
 ## 备注 / 未决
 
-- 195MB 的 `myb_tss_random_walk_predictions.tsv` 是可重生成的中间产物，未纳入 git（脚本可用 `--reuse-predictions` 复用）。
-- 后续按 PAPER_FIGURE_TABLE_REPRODUCTION_CHECKLIST：补 Supp Fig 2（CNS 打分）与 Supp Fig 9（sampling）的 maxspan 版本。
+- 全部四类图（Figure 3、Figure 5、Supp Fig 2、Supp Fig 9）在 mns_maxspan seed1 官方模型上均已复现完成。
+- 各大体积中间产物（predictions/pairs/npz）均可用对应脚本按相同参数重生成。

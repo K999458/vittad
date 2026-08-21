@@ -1,4 +1,6 @@
 *_embedding_arrays.npz
 myb_tss_random_walk_predictions.tsv
 cns_perturbation_pairs.tsv
+sampling_pairwise_counts.tsv
+sampling_predictions.tsv
 logs/

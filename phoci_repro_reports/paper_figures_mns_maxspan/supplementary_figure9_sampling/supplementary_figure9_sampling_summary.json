@@ -1,0 +1,64 @@
+{
+  "cell_line": "GM12878",
+  "chrom": "all_test_chroms",
+  "count_per_method": 2000000,
+  "counts_by_method": {
+    "random_choice": 2000000,
+    "random_walk": 2000000
+  },
+  "device": "cuda:0",
+  "gpu_name": "NVIDIA GeForce RTX 3090",
+  "max_memory_allocated_gb": 0.5284,
+  "max_memory_reserved_gb": 0.7285,
+  "model": "Comprehensive",
+  "order_weights": {
+    "3": 2324865,
+    "4": 1399495,
+    "5": 789435,
+    "6": 435898
+  },
+  "outputs": {
+    "pairwise_counts": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/supplementary_figure9_sampling/sampling_pairwise_counts.tsv",
+    "pairwise_plot_pdf": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/supplementary_figure9_sampling/supplementary_figure9c_d_pairwise_maps.pdf",
+    "pairwise_plot_png": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/supplementary_figure9_sampling/supplementary_figure9c_d_pairwise_maps.png",
+    "predictions": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/supplementary_figure9_sampling/sampling_predictions.tsv",
+    "threshold_plot_pdf": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/supplementary_figure9_sampling/supplementary_figure9e_threshold_fraction.pdf",
+    "threshold_plot_png": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/supplementary_figure9_sampling/supplementary_figure9e_threshold_fraction.png",
+    "threshold_summary": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/supplementary_figure9_sampling/sampling_threshold_summary.tsv"
+  },
+  "plotting_device": null,
+  "sampling_event_uniqueness": "duplicates_allowed; each sampled path still has unique nodes internally",
+  "scoring_device": "cuda:0",
+  "selected_windows": 60,
+  "split": "test",
+  "threads": 16,
+  "threshold_pass_counts": {
+    "random_choice": {
+      "0.5": 48885,
+      "0.6": 21446,
+      "0.7": 8874,
+      "0.8": 2933,
+      "0.88": 916,
+      "0.9": 596,
+      "0.95": 165
+    },
+    "random_walk": {
+      "0.5": 1674870,
+      "0.6": 1488573,
+      "0.7": 1198221,
+      "0.8": 775472,
+      "0.88": 374864,
+      "0.9": 277855,
+      "0.95": 76018
+    }
+  },
+  "thresholds": [
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.88,
+    0.9,
+    0.95
+  ]
+}
