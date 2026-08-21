@@ -513,6 +513,30 @@
   - W6-5：search_skills 的 routing_note、注入回退行为、mcp-routes.json 可配置项（zh_boost/curated_boost/keyword_cats）如需写进文档，以本条目口径为准。
   - 主控/Wave7：keyword_cats 45 条是起步词表，误路由案例出现后直接改 mcp-routes.json（60s 生效免重启）；trending window=new 会在下一轮数据构建（added_at 有区分度）后自动有货。
 
+### [W6] Agent-W6-6 — 端到端实测与验收（E2E 报告 + 证据归档）
+- 时间：2026-08-17 21:55 (UTC+8)
+- 状态：完成（重跑轮；结论：**带条件通过**，条件均为环境性、非代码缺陷）
+- 做了什么：
+  - 前置核验：W6-1~5 九个落盘文件全部在场；server.mjs 锚点 A7~A10 接线与所有权矩阵一致；TIMELINE 五条 [W6] 条目逐条读取并按交接口径复测。
+  - 起服 PORT=3406（E7 降级：127.0.0.1 直连，公网链路声明待主控）；主站冒烟 13 URL 全 200 零回归。
+  - 真实客户端三连：cursor-agent(2026.07.23) / claude(2.1.159) / codex(0.144.6) 均写入 MCP 配置并真实握手——cursor-agent `mcp list-tools` 可见 8 工具全集、claude `mcp list` ✓ Connected、codex streamable_http enabled；会话内 LLM 驱动调用因本机无 LLM API 出网（anthropic 直连 403、无代理）不可执行，已按 §7.5 降级链改用严格协议顺序的 node 脚本客户端完成闭环并声明。
+  - 闭环（全程留档）：search_skills("git commit helper")→get_skill→download_skill→/dl/ 下载 200（sha256/size 与工具返回一致）→get_install_plan→按 plan 落盘 cursor/claude/codex 三客户端 skills 目录→自检三条过。
+  - 负例矩阵 8/8（每例请求/响应对存档）：无 token 403 / 过期 403 / 坏 JSON -32700 / 未知工具 -32602 / 300KB body 413 / SSE-only GET 与 DELETE 405 / 超频第 301 个 429+retry-after:60 / 蜜罐 /wp-admin/export.php 404→封禁 429。另复跑 dl_negative 15/15、sec_probe 5 PASS/1 SKIP（unban 需临时改 config，W6-4 已验，本轮保持默认态）、mcp_smoke 23/23。
+  - 路由 19/19：W6-2 交接 16 条 total 与 routing_note 逐条一致 + 3 条对抗性（中英混合/错拼/540 字符超长 q 均不崩）。
+  - 延迟（各 100 次）：search p95=131.4ms、get p95=2.4ms、download（sha 缓存后）p95=1.7ms——全部 E5 线内。
+  - 稳定性：10 分钟闭环压测 131 轮=524 请求零工具错误，RSS 368.3→327.3MB（Δ−40.9MB）同 PID 存活，服务端 console 零异常；审计日志 823 条 JSONL 零坏行。
+  - 文档盲测：只按 /docs/mcp 页 curl 实录四步复演通过，响应值与文档一致；examples 三文件 200。
+- 产出：
+  - /store/zkyang/qingtian-standalone/docs/ui-overhaul/W6-E2E-REPORT.md（新建，结论先行 + 逐项验收表 + 返工清单 + 证据索引）
+  - /store/zkyang/qingtian-standalone/docs/ui-overhaul/research/assets/w6/（20+ 证据文件：客户端握手、闭环 transcript、负例请求/响应对、路由/延迟/压测脚本与输出、配置备份）
+  - 站点代码零改动（无 ≤10 行笔误级修复需要）
+- 关键决定 / 发现：
+  - 无阻塞性返工项。观察项 4 条见报告 §7：O1 q≤100 仅 schema 声明未在服务器侧截断（W6-2/Wave7 可选加固）；O2 未知路径软 404（既有行为，非 Wave6 范围）；O3 unban 用例默认态 SKIP（W6-4 已验）；O4 客户端会话内 LLM 调用待主控打通出网后一句话补验。
+  - qingtian 通道联调按提示词口径标记主控侧可选用例，不阻塞验收。
+- 阻塞：无（生产公网链路 L7 仍归主控）。
+- 测毕清理：3406 停服、tmux 会话销毁；claude/codex `mcp remove skillhub-e2e`、~/.cursor/mcp.json 从备份还原（备份留 assets/w6/config-backup/）；测试落盘的三处 git-commit-helper 技能目录已删除；data/mcp_access.log 保留（真实流量，W6-4 所有权）。
+- 交接给主控：上线 3199 + 反代确认后，用 /docs/mcp 页原样配置任一真实客户端问一句「找个 git commit 技能装上」即可补齐 O4 最后一环；E2E 全部脚本可对生产域名原样重跑。
+
 <!-- 新条目追加在此行上方之后（保持正序，本注释始终在文件末尾） -->
 
 
