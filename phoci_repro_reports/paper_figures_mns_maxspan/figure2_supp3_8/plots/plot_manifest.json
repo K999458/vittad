@@ -1,0 +1,65 @@
+[
+  {
+    "description": "Figure 2d-f chromosome AUC, intra-cell test",
+    "pdf": "outputs/paper_figures_mns_maxspan/figure2_supp3_8/plots/figure2d_f_chromosome_auc_intra.pdf",
+    "plot": "figure2d_f_chromosome_auc_intra",
+    "png": "outputs/paper_figures_mns_maxspan/figure2_supp3_8/plots/figure2d_f_chromosome_auc_intra.png",
+    "sources": "window_metrics.tsv"
+  },
+  {
+    "description": "Supplementary Figure 3 intra-cell chromosome AUC/AP",
+    "pdf": "outputs/paper_figures_mns_maxspan/figure2_supp3_8/plots/supplementary_figure3_intra_chromosome_auc_ap.pdf",
+    "plot": "supplementary_figure3_intra_chromosome_auc_ap",
+    "png": "outputs/paper_figures_mns_maxspan/figure2_supp3_8/plots/supplementary_figure3_intra_chromosome_auc_ap.png",
+    "sources": "window_metrics.tsv"
+  },
+  {
+    "description": "Supplementary Figure 4 inter-cell chromosome AUC",
+    "pdf": "outputs/paper_figures_mns_maxspan/figure2_supp3_8/plots/supplementary_figure4_inter_chromosome_auc.pdf",
+    "plot": "supplementary_figure4_inter_chromosome_auc",
+    "png": "outputs/paper_figures_mns_maxspan/figure2_supp3_8/plots/supplementary_figure4_inter_chromosome_auc.png",
+    "sources": "window_metrics.tsv"
+  },
+  {
+    "description": "Supplementary Figure 5 inter-cell chromosome AP",
+    "pdf": "outputs/paper_figures_mns_maxspan/figure2_supp3_8/plots/supplementary_figure5_inter_chromosome_ap.pdf",
+    "plot": "supplementary_figure5_inter_chromosome_ap",
+    "png": "outputs/paper_figures_mns_maxspan/figure2_supp3_8/plots/supplementary_figure5_inter_chromosome_ap.png",
+    "sources": "window_metrics.tsv"
+  },
+  {
+    "description": "Figure 2g-i order AUC, intra-cell test",
+    "pdf": "outputs/paper_figures_mns_maxspan/figure2_supp3_8/plots/figure2g_i_order_auc_intra.pdf",
+    "plot": "figure2g_i_order_auc_intra",
+    "png": "outputs/paper_figures_mns_maxspan/figure2_supp3_8/plots/figure2g_i_order_auc_intra.png",
+    "sources": "order_metrics.tsv"
+  },
+  {
+    "description": "Supplementary Figure 6 intra-cell order AUC/AP",
+    "pdf": "outputs/paper_figures_mns_maxspan/figure2_supp3_8/plots/supplementary_figure6_intra_order_auc_ap.pdf",
+    "plot": "supplementary_figure6_intra_order_auc_ap",
+    "png": "outputs/paper_figures_mns_maxspan/figure2_supp3_8/plots/supplementary_figure6_intra_order_auc_ap.png",
+    "sources": "order_metrics.tsv"
+  },
+  {
+    "description": "Supplementary Figure 7 inter-cell order AUC/AP",
+    "pdf": "outputs/paper_figures_mns_maxspan/figure2_supp3_8/plots/supplementary_figure7_inter_order_auc_ap.pdf",
+    "plot": "supplementary_figure7_inter_order_auc_ap",
+    "png": "outputs/paper_figures_mns_maxspan/figure2_supp3_8/plots/supplementary_figure7_inter_order_auc_ap.png",
+    "sources": "order_metrics.tsv"
+  },
+  {
+    "description": "Figure 2k model-score consistency summary",
+    "pdf": "outputs/paper_figures_mns_maxspan/figure2_supp3_8/plots/figure2k_model_score_consistency_summary.pdf",
+    "plot": "figure2k_model_score_consistency_summary",
+    "png": "outputs/paper_figures_mns_maxspan/figure2_supp3_8/plots/figure2k_model_score_consistency_summary.png",
+    "sources": "model_score_consistency.tsv"
+  },
+  {
+    "description": "Figure 2k sampled positive-candidate score consistency",
+    "pdf": "outputs/paper_figures_mns_maxspan/figure2_supp3_8/plots/figure2k_model_score_consistency_scatter.pdf",
+    "plot": "figure2k_model_score_consistency_scatter",
+    "png": "outputs/paper_figures_mns_maxspan/figure2_supp3_8/plots/figure2k_model_score_consistency_scatter.png",
+    "sources": "window_scores.tsv;figure2k_consistency_sample.tsv"
+  }
+]

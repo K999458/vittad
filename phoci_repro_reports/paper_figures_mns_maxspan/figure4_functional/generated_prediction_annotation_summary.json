@@ -1,0 +1,185 @@
+{
+  "annotated_bins": 34901,
+  "ccre": "/storu/ysu/hiporec/deep-learning/Data/GM12878_cCREs.bed",
+  "cell_line": "GM12878",
+  "chromhmm": "/storu/ysu/hiporec/deep-learning/Data/annotations/chromhmm18/GM12878/ENCFF671FDK.bigBed",
+  "expression_bins": "outputs/paper_figures_global_mns_cap150k_main_mixed/figure4_functional/expression_gene_bins.tsv",
+  "groups": {
+    "high": {
+      "annotated_bins": 15351,
+      "ccre_top": [
+        [
+          "Low-DNase",
+          13320
+        ],
+        [
+          "unannotated",
+          2008
+        ],
+        [
+          "dELS",
+          609
+        ],
+        [
+          "pELS",
+          464
+        ],
+        [
+          "PLS",
+          454
+        ],
+        [
+          "CA-TF",
+          330
+        ],
+        [
+          "CA-CTCF",
+          324
+        ],
+        [
+          "CA-H3K4me3",
+          159
+        ],
+        [
+          "CA-only",
+          81
+        ]
+      ],
+      "chromhmm_top": [
+        [
+          "Quies",
+          9914
+        ],
+        [
+          "ReprPCWk",
+          3107
+        ],
+        [
+          "TxWk",
+          2834
+        ],
+        [
+          "EnhWk",
+          1822
+        ],
+        [
+          "Het",
+          1487
+        ],
+        [
+          "Tx",
+          1043
+        ],
+        [
+          "ZNF/Rpts",
+          752
+        ],
+        [
+          "EnhA1",
+          713
+        ],
+        [
+          "TssFlnk",
+          666
+        ],
+        [
+          "ReprPC",
+          657
+        ]
+      ],
+      "high_expression_gene_count": 91,
+      "low_expression_gene_count": 107
+    },
+    "low": {
+      "annotated_bins": 19550,
+      "ccre_top": [
+        [
+          "Low-DNase",
+          13756
+        ],
+        [
+          "unannotated",
+          5768
+        ],
+        [
+          "CA-CTCF",
+          181
+        ],
+        [
+          "PLS",
+          171
+        ],
+        [
+          "pELS",
+          151
+        ],
+        [
+          "dELS",
+          124
+        ],
+        [
+          "CA-TF",
+          106
+        ],
+        [
+          "CA-H3K4me3",
+          65
+        ],
+        [
+          "CA-only",
+          34
+        ]
+      ],
+      "chromhmm_top": [
+        [
+          "Quies",
+          17035
+        ],
+        [
+          "ReprPCWk",
+          1717
+        ],
+        [
+          "TxWk",
+          1294
+        ],
+        [
+          "Het",
+          1103
+        ],
+        [
+          "EnhWk",
+          707
+        ],
+        [
+          "ZNF/Rpts",
+          364
+        ],
+        [
+          "Tx",
+          344
+        ],
+        [
+          "TssFlnk",
+          312
+        ],
+        [
+          "unannotated",
+          233
+        ],
+        [
+          "ReprPC",
+          223
+        ]
+      ],
+      "high_expression_gene_count": 67,
+      "low_expression_gene_count": 71
+    }
+  },
+  "low_n": 5000,
+  "method": "random_walk",
+  "predictions": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/supplementary_figure9_sampling_regen/sampling_predictions.tsv",
+  "selected_predictions": 10000,
+  "threshold": 0.88,
+  "top_n": 5000
+}

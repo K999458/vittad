@@ -1,0 +1,5 @@
+comparison	left_model	right_model	shared_candidates	pearson_r	mean_abs_delta	max_abs_delta
+GM12878_intra_vs_K562_inter_on_GM12878_test	GM12878:test_intra	K562:test_inter	5476343	0.78741272	0.22574595	0.3827002
+K562_intra_vs_GM12878_inter_on_K562_test	K562:test_intra	GM12878:test_inter	3403065	0.77986463	0.2380532	0.38328063
+Comprehensive_vs_GM12878_intra_test	Comprehensive:test	GM12878:test_intra	5476343	0.67890167	0.25123713	0.44905972
+Comprehensive_vs_K562_intra_test	Comprehensive:test	K562:test_intra	3403065	0.94985071	0.038072897	0.17416924

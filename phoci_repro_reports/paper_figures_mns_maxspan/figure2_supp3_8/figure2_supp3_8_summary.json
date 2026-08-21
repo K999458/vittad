@@ -1,0 +1,22 @@
+{
+  "device": "cpu",
+  "models": [
+    "GM12878",
+    "K562",
+    "Comprehensive"
+  ],
+  "outputs": {
+    "chromosome_metrics": "outputs/paper_figures_mns_maxspan/figure2_supp3_8/chromosome_metrics.tsv",
+    "frequency_score_summary": "outputs/paper_figures_mns_maxspan/figure2_supp3_8/frequency_score_summary.tsv",
+    "model_score_consistency": "outputs/paper_figures_mns_maxspan/figure2_supp3_8/model_score_consistency.tsv",
+    "order_metrics": "outputs/paper_figures_mns_maxspan/figure2_supp3_8/order_metrics.tsv",
+    "span_metrics": "outputs/paper_figures_mns_maxspan/figure2_supp3_8/span_metrics.tsv",
+    "window_metrics": "outputs/paper_figures_mns_maxspan/figure2_supp3_8/window_metrics.tsv",
+    "window_scores": "outputs/paper_figures_mns_maxspan/figure2_supp3_8/window_scores.tsv"
+  },
+  "positive_score_rows": 39628772,
+  "precompute_root": "outputs/precomputed_mns_maxspan_combined",
+  "score_rows": 158515088,
+  "threads": 32,
+  "training_root": "outputs/mns_maxspan_models_seed1"
+}

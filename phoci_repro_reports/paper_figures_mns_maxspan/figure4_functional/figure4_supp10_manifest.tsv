@@ -1,0 +1,6 @@
+artifact	path	description
+selected_examples	/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure4_functional/generated_prediction_examples.tsv	High- and low-score generated random-walk predictions.
+bin_annotations	/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure4_functional/generated_prediction_bin_annotations.tsv	ChromHMM/cCRE/expression annotation for selected generated prediction bins.
+summary	/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure4_functional/generated_prediction_annotation_summary.json	Generated prediction annotation summary.
+figure4_summary_png	/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure4_functional/figure4c_f_generated_state_expression_summary.png	Figure 4-style high/low functional state summary.
+supplementary_figure10_examples_png	/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure4_functional/supplementary_figure10_generated_examples.png	Supplementary Figure 10-style generated interaction examples.

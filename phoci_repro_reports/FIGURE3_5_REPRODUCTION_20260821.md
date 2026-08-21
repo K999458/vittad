@@ -55,7 +55,26 @@ Figure 5 的全部规则计数与 CRISPRi 行数与 `outputs/paper_figures_globa
 
 `ssh ysu@node4` 已配好免密（经 telnet 用 `Ysu2024!` 首次登录后把本机公钥写入 ysu 的 authorized_keys），ysu 身份可直接读写项目目录；此前用的 ywjiang2 免密通道仍可用。
 
+## Figure 2 / Supp Fig 3–8 画图面板（8/21 下午补齐）
+
+- 基于 8/20 已导出的 maxspan 指标 TSV（1.585 亿打分行），用原 `plot_figure2_supp_metrics.py` 出图：figure2d_f / g_i / k(scatter+summary)、supp3–7 共 9 张，status=0。
+- figure2j 与 supp8 两张频率面板被原脚本跳过：maxspan 分片里所有正例观测频次均为 1（旧 global 版有 1 和 2+ 两档），纯数字列被 pandas 读成 int 导致 `isin(["0","1","2+"])` 过滤为空。已用 `patched_scripts/plot_frequency_panels_maxspan.py`（bucket 按字符串读 + pointplot）补出这两张，面板标题注明单一频次档的口径。
+- 11 张面板 png/pdf + plot_manifest 已拷贝到 `paper_figures_mns_maxspan/figure2_supp3_8/`（含 6 个指标 TSV 与 summary；21GB window_scores.tsv 留在项目目录不入库）。
+
+## Figure 4 / Supp Fig 10（生成样本功能注释，8/21 下午补齐）
+
+- 依赖的 suppfig9 `sampling_predictions.tsv` 此前出图后已清理，用相同种子（20260628）重生成（约 5 分钟，GPU），随后按旧 global 版参数原样注释：method=random_walk、top/low 各 5000、threshold=0.88、GM12878 ChromHMM(ENCFF671FDK)/cCRE 注释、expression_gene_bins 复用旧版（与模型无关）。
+- 状态：完成，status=0。annotated_bins=34901、selected_predictions=10000（旧版 18170/5022，差异来自 maxspan 高分候选更多、去重后覆盖更广）。
+- 产物：figure4c_f_generated_state_expression_summary.png/pdf、supplementary_figure10_generated_examples.png/pdf、generated_prediction_examples.tsv、generated_prediction_bin_annotations.tsv、figure4_supp10_manifest.tsv、summary JSON，均在 `paper_figures_mns_maxspan/figure4_functional/`。
+- 重生成用的临时 `supplementary_figure9_sampling_regen/`（约 1.3GB）已删除。
+
+## seed1 vs seed2 稳定性对照（8/21 下午补齐）
+
+- seed2（20260713）三细胞系训练已全部收尾（GM12878 8/20 19:07、K562 20:38、Comprehensive 8/21 00:17）。
+- 用 `patched_scripts/build_seed_comparison_table.py` 汇成 `paper_figures_mns_maxspan/tables/seed1_vs_seed2_metric_comparison.tsv`（27 行 = 3 模型 × train/valid/test × SNS/MNS/CNS）。
+- 结论：max |ΔAUC| = 0.0042、max |ΔAP| = 0.0026，且都只出现在小样本 train 切片；test/valid 上 |ΔAUC| ≤ 0.0006——maxspan 结果对随机种子完全稳定。
+
 ## 备注 / 未决
 
-- 全部四类图（Figure 3、Figure 5、Supp Fig 2、Supp Fig 9）在 mns_maxspan seed1 官方模型上均已复现完成。
-- 各大体积中间产物（predictions/pairs/npz）均可用对应脚本按相同参数重生成。
+- maxspan 版图目录至此与原文对齐：Figure 2（d–k）、Figure 3、Figure 4、Figure 5、Supp Fig 2–10 面板全部落盘；Figure 1 / Supp Fig 1 / Supp Fig 11 / 补充表与模型无关，无需随 maxspan 重做。
+- 各大体积中间产物（predictions/pairs/npz/window_scores）均可用对应脚本按相同参数重生成。
