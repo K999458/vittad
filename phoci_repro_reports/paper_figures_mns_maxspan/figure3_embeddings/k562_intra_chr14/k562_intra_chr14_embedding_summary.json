@@ -1,0 +1,81 @@
+{
+  "case_id": "k562_intra_chr14",
+  "cell_line": "K562",
+  "checkpoint": "outputs/mns_maxspan_models_seed1/K562/sage_full_model.pt",
+  "chrom": "chr14",
+  "cluster_compartment_counts": {
+    "0": {
+      "A": 1354,
+      "B": 6887,
+      "unknown": 287
+    },
+    "1": {
+      "A": 12,
+      "B": 4,
+      "unknown": 553
+    },
+    "2": {
+      "A": 490,
+      "B": 18,
+      "unknown": 17
+    },
+    "3": {
+      "A": 705,
+      "B": 37,
+      "unknown": 24
+    },
+    "4": {
+      "A": 1694,
+      "B": 21,
+      "unknown": 50
+    },
+    "5": {
+      "A": 1659,
+      "B": 490,
+      "unknown": 166
+    },
+    "6": {
+      "A": 1624,
+      "B": 540,
+      "unknown": 191
+    },
+    "7": {
+      "A": 1302,
+      "B": 3,
+      "unknown": 44
+    }
+  },
+  "cluster_count": 8,
+  "cluster_counts": {
+    "0": 8528,
+    "1": 569,
+    "2": 525,
+    "3": 766,
+    "4": 1765,
+    "5": 2315,
+    "6": 2355,
+    "7": 1349
+  },
+  "compartment": "/storu/ysu/hiporec/deep-learning/Data/K562/K562_compartments.bw",
+  "compartment_counts": {
+    "A": 8840,
+    "B": 8000,
+    "unknown": 1332
+  },
+  "coverage": {
+    "bin_end": 21376,
+    "bin_start": 3204,
+    "end_bp": 106880000,
+    "manifest_rows": 19,
+    "node_count": 18172,
+    "processed_rows": 19,
+    "start_bp": 16020000
+  },
+  "embedding_channels": 400,
+  "manifest": "outputs/precomputed_mns_maxspan_combined/K562/manifest.tsv",
+  "model": "K562",
+  "node_count": 18172,
+  "porec_mcool": "/storu/ysu/hiporec/hiporec_data/mcool/K562_PoreC_1kb.mcool",
+  "projection_method": "umap",
+  "split": "test"
+}

@@ -1,0 +1,5 @@
+target_gene	locus	related_bin	genomic_bin	sgRNA_count	single_mean_log2_fc
+MYB	A	9	27021	6	-0.8204
+MYB	B	17	27029	6	-1.3283
+MYB	C	52	27064	3	-2.0597
+MYB	TSS	24	27036	4	-4.6454

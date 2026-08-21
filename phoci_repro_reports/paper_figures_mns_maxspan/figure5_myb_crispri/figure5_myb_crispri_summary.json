@@ -1,0 +1,84 @@
+{
+  "background_max_score": 0.5,
+  "background_transactions": 939119,
+  "candidate_count": 1000000,
+  "cell_line": "K562",
+  "checkpoint": "outputs/mns_maxspan_models_seed1/Comprehensive/sage_full_model.pt",
+  "device": "cuda:0",
+  "experimental_rule_count": 12,
+  "experimental_transactions": 118435,
+  "expression_rows": 64,
+  "gpu_name": "NVIDIA GeForce RTX 3090",
+  "high_transactions": 160525,
+  "max_memory_allocated_gb": 0.6992,
+  "max_memory_reserved_gb": 0.9434,
+  "model": "Comprehensive",
+  "module_rows": [
+    {
+      "count": 4,
+      "members": "TSS;B;C",
+      "module": "TSS_B_C",
+      "support": 2.4918237034729793e-05,
+      "total": 160525
+    },
+    {
+      "count": 4,
+      "members": "TSS;A;C",
+      "module": "TSS_A_C",
+      "support": 2.4918237034729793e-05,
+      "total": 160525
+    },
+    {
+      "count": 4,
+      "members": "TSS;A;B",
+      "module": "TSS_A_B",
+      "support": 2.4918237034729793e-05,
+      "total": 160525
+    }
+  ],
+  "order_counts": {
+    "3": 393265,
+    "4": 284296,
+    "5": 193332,
+    "6": 129107
+  },
+  "order_weights": {
+    "3": 38374,
+    "4": 27741,
+    "5": 18865,
+    "6": 12598
+  },
+  "outputs": {
+    "experimental_module_support": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure5_myb_crispri/supplementary_figure11_experimental_myb_module_support.tsv",
+    "experimental_rules": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure5_myb_crispri/supplementary_figure11_experimental_myb_rules.tsv",
+    "expression": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure5_myb_crispri/crispri_expression_summary.tsv",
+    "figure5_crispri_png": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure5_myb_crispri/figure5c_h_crispri_panels.png",
+    "figure5_rules_png": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure5_myb_crispri/figure5a_b_myb_rule_panels.png",
+    "manifest": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure5_myb_crispri/figure5_supp11_manifest.tsv",
+    "module_support": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure5_myb_crispri/figure5a_myb_module_support.tsv",
+    "pair_rules": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure5_myb_crispri/figure5a_myb_target_pair_rules.tsv",
+    "predictions": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure5_myb_crispri/myb_tss_random_walk_predictions.tsv",
+    "synergy": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure5_myb_crispri/crispri_synergy_summary.tsv",
+    "target_map": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure5_myb_crispri/myb_crispri_target_map.tsv",
+    "target_map_summary": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure5_myb_crispri/myb_crispri_target_map_summary.json",
+    "tss_rules": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure5_myb_crispri/figure5a_myb_tss_centered_rules.tsv"
+  },
+  "pair_rule_count": 12,
+  "prediction_rows": 1000000,
+  "shard": "outputs/precomputed_mns_maxspan_combined/K562/train/chr6_0027.npz",
+  "signal_min_score": 0.3,
+  "signal_transactions": 160525,
+  "synergy_rows": 36,
+  "target_bins": {
+    "A": 27021,
+    "B": 27029,
+    "C": 27064,
+    "TSS": 27036
+  },
+  "threads": 16,
+  "total_predictions": 1000000,
+  "tss_node": 25,
+  "tss_predictions": 1000000,
+  "tss_rule_count": 3,
+  "workbook": "../papers/phoci_supplementary_data_crispri_gene_expression.xlsx"
+}

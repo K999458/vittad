@@ -1,0 +1,406 @@
+{
+  "bin_size": 5000,
+  "cases": {
+    "comprehensive_gm12878_chr14": {
+      "case_id": "comprehensive_gm12878_chr14",
+      "cell_line": "GM12878",
+      "checkpoint": "outputs/mns_maxspan_models_seed1/Comprehensive/sage_full_model.pt",
+      "chrom": "chr14",
+      "cluster_compartment_counts": {
+        "0": {
+          "A": 448,
+          "B": 67,
+          "unknown": 54
+        },
+        "1": {
+          "A": 1148,
+          "B": 6431,
+          "unknown": 223
+        },
+        "2": {
+          "A": 686,
+          "B": 229,
+          "unknown": 89
+        },
+        "3": {
+          "A": 3,
+          "B": 64,
+          "unknown": 781
+        },
+        "4": {
+          "A": 889,
+          "B": 1888,
+          "unknown": 165
+        },
+        "5": {
+          "A": 1166,
+          "B": 377,
+          "unknown": 92
+        },
+        "6": {
+          "A": 2009,
+          "B": 158,
+          "unknown": 85
+        },
+        "7": {
+          "A": 991,
+          "B": 66,
+          "unknown": 63
+        }
+      },
+      "cluster_count": 8,
+      "cluster_counts": {
+        "0": 569,
+        "1": 7802,
+        "2": 1004,
+        "3": 848,
+        "4": 2942,
+        "5": 1635,
+        "6": 2252,
+        "7": 1120
+      },
+      "compartment": "/storu/ysu/hiporec/deep-learning/Data/GM12878_compartments.bw",
+      "compartment_counts": {
+        "A": 7340,
+        "B": 9280,
+        "unknown": 1552
+      },
+      "contact_map": {
+        "path": "/storu/ysu/hiporec/hiporec_data/mcool/GM12878_PoreC_1kb.mcool",
+        "region": "chr14:16020000-106880000",
+        "resolution": 100000,
+        "status": "ok",
+        "uri": "/resolutions/100000"
+      },
+      "coverage": {
+        "bin_end": 21376,
+        "bin_start": 3204,
+        "end_bp": 106880000,
+        "manifest_rows": 19,
+        "node_count": 18172,
+        "processed_rows": 19,
+        "start_bp": 16020000
+      },
+      "embedding_channels": 400,
+      "manifest": "outputs/precomputed_mns_maxspan_combined/GM12878/manifest.tsv",
+      "model": "Comprehensive",
+      "node_count": 18172,
+      "outputs": {
+        "arrays": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/comprehensive_gm12878_chr14/comprehensive_gm12878_chr14_embedding_arrays.npz",
+        "contact_cluster_pdf": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/comprehensive_gm12878_chr14/comprehensive_gm12878_chr14_contact_cluster.pdf",
+        "contact_cluster_png": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/comprehensive_gm12878_chr14/comprehensive_gm12878_chr14_contact_cluster.png",
+        "nodes": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/comprehensive_gm12878_chr14/comprehensive_gm12878_chr14_embedding_nodes.tsv",
+        "summary": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/comprehensive_gm12878_chr14/comprehensive_gm12878_chr14_embedding_summary.json",
+        "umap": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/comprehensive_gm12878_chr14/comprehensive_gm12878_chr14_embedding_umap.png"
+      },
+      "porec_mcool": "/storu/ysu/hiporec/hiporec_data/mcool/GM12878_PoreC_1kb.mcool",
+      "projection_method": "umap",
+      "split": "test"
+    },
+    "comprehensive_k562_chr14": {
+      "case_id": "comprehensive_k562_chr14",
+      "cell_line": "K562",
+      "checkpoint": "outputs/mns_maxspan_models_seed1/Comprehensive/sage_full_model.pt",
+      "chrom": "chr14",
+      "cluster_compartment_counts": {
+        "0": {
+          "A": 2007,
+          "B": 7103,
+          "unknown": 389
+        },
+        "1": {
+          "A": 1646,
+          "B": 624,
+          "unknown": 136
+        },
+        "2": {
+          "A": 941,
+          "B": 74,
+          "unknown": 62
+        },
+        "3": {
+          "A": 12,
+          "B": 4,
+          "unknown": 553
+        },
+        "4": {
+          "A": 793,
+          "B": 71,
+          "unknown": 40
+        },
+        "5": {
+          "A": 1770,
+          "B": 45,
+          "unknown": 93
+        },
+        "6": {
+          "A": 394,
+          "B": 10,
+          "unknown": 12
+        },
+        "7": {
+          "A": 1277,
+          "B": 69,
+          "unknown": 47
+        }
+      },
+      "cluster_count": 8,
+      "cluster_counts": {
+        "0": 9499,
+        "1": 2406,
+        "2": 1077,
+        "3": 569,
+        "4": 904,
+        "5": 1908,
+        "6": 416,
+        "7": 1393
+      },
+      "compartment": "/storu/ysu/hiporec/deep-learning/Data/K562/K562_compartments.bw",
+      "compartment_counts": {
+        "A": 8840,
+        "B": 8000,
+        "unknown": 1332
+      },
+      "contact_map": {
+        "path": "/storu/ysu/hiporec/hiporec_data/mcool/K562_PoreC_1kb.mcool",
+        "region": "chr14:16020000-106880000",
+        "resolution": 100000,
+        "status": "ok",
+        "uri": "/resolutions/100000"
+      },
+      "coverage": {
+        "bin_end": 21376,
+        "bin_start": 3204,
+        "end_bp": 106880000,
+        "manifest_rows": 19,
+        "node_count": 18172,
+        "processed_rows": 19,
+        "start_bp": 16020000
+      },
+      "embedding_channels": 400,
+      "manifest": "outputs/precomputed_mns_maxspan_combined/K562/manifest.tsv",
+      "model": "Comprehensive",
+      "node_count": 18172,
+      "outputs": {
+        "arrays": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/comprehensive_k562_chr14/comprehensive_k562_chr14_embedding_arrays.npz",
+        "contact_cluster_pdf": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/comprehensive_k562_chr14/comprehensive_k562_chr14_contact_cluster.pdf",
+        "contact_cluster_png": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/comprehensive_k562_chr14/comprehensive_k562_chr14_contact_cluster.png",
+        "nodes": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/comprehensive_k562_chr14/comprehensive_k562_chr14_embedding_nodes.tsv",
+        "summary": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/comprehensive_k562_chr14/comprehensive_k562_chr14_embedding_summary.json",
+        "umap": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/comprehensive_k562_chr14/comprehensive_k562_chr14_embedding_umap.png"
+      },
+      "porec_mcool": "/storu/ysu/hiporec/hiporec_data/mcool/K562_PoreC_1kb.mcool",
+      "projection_method": "umap",
+      "split": "test"
+    },
+    "gm12878_intra_chr14": {
+      "case_id": "gm12878_intra_chr14",
+      "cell_line": "GM12878",
+      "checkpoint": "outputs/mns_maxspan_models_seed1/GM12878/sage_full_model.pt",
+      "chrom": "chr14",
+      "cluster_compartment_counts": {
+        "0": {
+          "A": 2168,
+          "B": 16,
+          "unknown": 81
+        },
+        "1": {
+          "A": 3,
+          "B": 64,
+          "unknown": 785
+        },
+        "2": {
+          "A": 949,
+          "B": 2668,
+          "unknown": 246
+        },
+        "3": {
+          "A": 593,
+          "B": 13,
+          "unknown": 30
+        },
+        "4": {
+          "A": 1008,
+          "B": 75,
+          "unknown": 65
+        },
+        "5": {
+          "A": 420,
+          "B": 67,
+          "unknown": 31
+        },
+        "6": {
+          "A": 2045,
+          "B": 1661,
+          "unknown": 306
+        },
+        "7": {
+          "A": 154,
+          "B": 4716,
+          "unknown": 8
+        }
+      },
+      "cluster_count": 8,
+      "cluster_counts": {
+        "0": 2265,
+        "1": 852,
+        "2": 3863,
+        "3": 636,
+        "4": 1148,
+        "5": 518,
+        "6": 4012,
+        "7": 4878
+      },
+      "compartment": "/storu/ysu/hiporec/deep-learning/Data/GM12878_compartments.bw",
+      "compartment_counts": {
+        "A": 7340,
+        "B": 9280,
+        "unknown": 1552
+      },
+      "contact_map": {
+        "path": "/storu/ysu/hiporec/hiporec_data/mcool/GM12878_PoreC_1kb.mcool",
+        "region": "chr14:16020000-106880000",
+        "resolution": 100000,
+        "status": "ok",
+        "uri": "/resolutions/100000"
+      },
+      "coverage": {
+        "bin_end": 21376,
+        "bin_start": 3204,
+        "end_bp": 106880000,
+        "manifest_rows": 19,
+        "node_count": 18172,
+        "processed_rows": 19,
+        "start_bp": 16020000
+      },
+      "embedding_channels": 400,
+      "manifest": "outputs/precomputed_mns_maxspan_combined/GM12878/manifest.tsv",
+      "model": "GM12878",
+      "node_count": 18172,
+      "outputs": {
+        "arrays": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/gm12878_intra_chr14/gm12878_intra_chr14_embedding_arrays.npz",
+        "contact_cluster_pdf": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/gm12878_intra_chr14/gm12878_intra_chr14_contact_cluster.pdf",
+        "contact_cluster_png": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/gm12878_intra_chr14/gm12878_intra_chr14_contact_cluster.png",
+        "nodes": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/gm12878_intra_chr14/gm12878_intra_chr14_embedding_nodes.tsv",
+        "summary": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/gm12878_intra_chr14/gm12878_intra_chr14_embedding_summary.json",
+        "umap": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/gm12878_intra_chr14/gm12878_intra_chr14_embedding_umap.png"
+      },
+      "porec_mcool": "/storu/ysu/hiporec/hiporec_data/mcool/GM12878_PoreC_1kb.mcool",
+      "projection_method": "umap",
+      "split": "test"
+    },
+    "k562_intra_chr14": {
+      "case_id": "k562_intra_chr14",
+      "cell_line": "K562",
+      "checkpoint": "outputs/mns_maxspan_models_seed1/K562/sage_full_model.pt",
+      "chrom": "chr14",
+      "cluster_compartment_counts": {
+        "0": {
+          "A": 1354,
+          "B": 6887,
+          "unknown": 287
+        },
+        "1": {
+          "A": 12,
+          "B": 4,
+          "unknown": 553
+        },
+        "2": {
+          "A": 490,
+          "B": 18,
+          "unknown": 17
+        },
+        "3": {
+          "A": 705,
+          "B": 37,
+          "unknown": 24
+        },
+        "4": {
+          "A": 1694,
+          "B": 21,
+          "unknown": 50
+        },
+        "5": {
+          "A": 1659,
+          "B": 490,
+          "unknown": 166
+        },
+        "6": {
+          "A": 1624,
+          "B": 540,
+          "unknown": 191
+        },
+        "7": {
+          "A": 1302,
+          "B": 3,
+          "unknown": 44
+        }
+      },
+      "cluster_count": 8,
+      "cluster_counts": {
+        "0": 8528,
+        "1": 569,
+        "2": 525,
+        "3": 766,
+        "4": 1765,
+        "5": 2315,
+        "6": 2355,
+        "7": 1349
+      },
+      "compartment": "/storu/ysu/hiporec/deep-learning/Data/K562/K562_compartments.bw",
+      "compartment_counts": {
+        "A": 8840,
+        "B": 8000,
+        "unknown": 1332
+      },
+      "contact_map": {
+        "path": "/storu/ysu/hiporec/hiporec_data/mcool/K562_PoreC_1kb.mcool",
+        "region": "chr14:16020000-106880000",
+        "resolution": 100000,
+        "status": "ok",
+        "uri": "/resolutions/100000"
+      },
+      "coverage": {
+        "bin_end": 21376,
+        "bin_start": 3204,
+        "end_bp": 106880000,
+        "manifest_rows": 19,
+        "node_count": 18172,
+        "processed_rows": 19,
+        "start_bp": 16020000
+      },
+      "embedding_channels": 400,
+      "manifest": "outputs/precomputed_mns_maxspan_combined/K562/manifest.tsv",
+      "model": "K562",
+      "node_count": 18172,
+      "outputs": {
+        "arrays": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/k562_intra_chr14/k562_intra_chr14_embedding_arrays.npz",
+        "contact_cluster_pdf": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/k562_intra_chr14/k562_intra_chr14_contact_cluster.pdf",
+        "contact_cluster_png": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/k562_intra_chr14/k562_intra_chr14_contact_cluster.png",
+        "nodes": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/k562_intra_chr14/k562_intra_chr14_embedding_nodes.tsv",
+        "summary": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/k562_intra_chr14/k562_intra_chr14_embedding_summary.json",
+        "umap": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/k562_intra_chr14/k562_intra_chr14_embedding_umap.png"
+      },
+      "porec_mcool": "/storu/ysu/hiporec/hiporec_data/mcool/K562_PoreC_1kb.mcool",
+      "projection_method": "umap",
+      "split": "test"
+    }
+  },
+  "chrom": "chr14",
+  "clusters": 8,
+  "device": "cuda:0",
+  "gpu_name": "NVIDIA GeForce RTX 3090",
+  "max_memory_allocated_gb": 0.0252,
+  "max_memory_reserved_gb": 0.0391,
+  "outputs": {
+    "cluster_counts": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/figure3_cluster_counts.tsv",
+    "figure3_embedding_panels_pdf": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/figure3_embedding_panels.pdf",
+    "figure3_embedding_panels_png": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/figure3_embedding_panels.png",
+    "manifest_json": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/figure3_manifest.json",
+    "manifest_tsv": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/figure3_manifest.tsv"
+  },
+  "precompute_root": "outputs/precomputed_mns_maxspan_combined",
+  "split": "test",
+  "threads": 16,
+  "training_root": "outputs/mns_maxspan_models_seed1"
+}

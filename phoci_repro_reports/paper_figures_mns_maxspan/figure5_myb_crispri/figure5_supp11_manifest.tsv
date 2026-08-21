@@ -1,0 +1,11 @@
+artifact	path	description
+myb_predictions	/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure5_myb_crispri/myb_tss_random_walk_predictions.tsv	Full MYB TSS-anchored random-walk predictions scored by the comprehensive PHOCI model.
+myb_tss_rules	/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure5_myb_crispri/figure5a_myb_tss_centered_rules.tsv	TSS-centered Apriori rules from high-score MYB predictions.
+myb_pair_rules	/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure5_myb_crispri/figure5a_myb_target_pair_rules.tsv	Target-locus pair rules from high-score MYB predictions.
+myb_module_support	/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure5_myb_crispri/figure5a_myb_module_support.tsv	Support for TSS-A-C, TSS-B-C, and TSS-A-B modules in high-score predictions.
+experimental_myb_rules	/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure5_myb_crispri/supplementary_figure11_experimental_myb_rules.tsv	Apriori-style target-locus rules from experimental K562 Pore-C positives in the MYB shard.
+experimental_myb_modules	/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure5_myb_crispri/supplementary_figure11_experimental_myb_module_support.tsv	Experimental Pore-C module support for MYB loci.
+crispri_expression	/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure5_myb_crispri/crispri_expression_summary.tsv	CRISPRi qRT-PCR expression summaries parsed from the supplementary workbook.
+crispri_synergy	/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure5_myb_crispri/crispri_synergy_summary.tsv	CRISPRi additive vs observed synergy summaries.
+figure5_rules_png	/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure5_myb_crispri/figure5a_b_myb_rule_panels.png	Figure 5a-b rule/module panel.
+figure5_crispri_png	/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure5_myb_crispri/figure5c_h_crispri_panels.png	Figure 5c-h CRISPRi panel.

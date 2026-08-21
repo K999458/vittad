@@ -1,0 +1,164 @@
+[
+  {
+    "artifact": "nodes",
+    "case_id": "gm12878_intra_chr14",
+    "description": "Node-level hidden embedding, UMAP, A/B compartment, and k-means cluster table.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/gm12878_intra_chr14/gm12878_intra_chr14_embedding_nodes.tsv"
+  },
+  {
+    "artifact": "summary",
+    "case_id": "gm12878_intra_chr14",
+    "description": "Case-level embedding analysis summary.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/gm12878_intra_chr14/gm12878_intra_chr14_embedding_summary.json"
+  },
+  {
+    "artifact": "arrays",
+    "case_id": "gm12878_intra_chr14",
+    "description": "Compressed hidden embedding, UMAP, cluster, and coordinate arrays.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/gm12878_intra_chr14/gm12878_intra_chr14_embedding_arrays.npz"
+  },
+  {
+    "artifact": "umap",
+    "case_id": "gm12878_intra_chr14",
+    "description": "Two-panel A/B and k-means UMAP plot.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/gm12878_intra_chr14/gm12878_intra_chr14_embedding_umap.png"
+  },
+  {
+    "artifact": "contact_cluster_png",
+    "case_id": "gm12878_intra_chr14",
+    "description": "Pore-C contact map with k-means genomic cluster track.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/gm12878_intra_chr14/gm12878_intra_chr14_contact_cluster.png"
+  },
+  {
+    "artifact": "contact_cluster_pdf",
+    "case_id": "gm12878_intra_chr14",
+    "description": "Pore-C contact map with k-means genomic cluster track.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/gm12878_intra_chr14/gm12878_intra_chr14_contact_cluster.pdf"
+  },
+  {
+    "artifact": "nodes",
+    "case_id": "k562_intra_chr14",
+    "description": "Node-level hidden embedding, UMAP, A/B compartment, and k-means cluster table.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/k562_intra_chr14/k562_intra_chr14_embedding_nodes.tsv"
+  },
+  {
+    "artifact": "summary",
+    "case_id": "k562_intra_chr14",
+    "description": "Case-level embedding analysis summary.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/k562_intra_chr14/k562_intra_chr14_embedding_summary.json"
+  },
+  {
+    "artifact": "arrays",
+    "case_id": "k562_intra_chr14",
+    "description": "Compressed hidden embedding, UMAP, cluster, and coordinate arrays.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/k562_intra_chr14/k562_intra_chr14_embedding_arrays.npz"
+  },
+  {
+    "artifact": "umap",
+    "case_id": "k562_intra_chr14",
+    "description": "Two-panel A/B and k-means UMAP plot.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/k562_intra_chr14/k562_intra_chr14_embedding_umap.png"
+  },
+  {
+    "artifact": "contact_cluster_png",
+    "case_id": "k562_intra_chr14",
+    "description": "Pore-C contact map with k-means genomic cluster track.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/k562_intra_chr14/k562_intra_chr14_contact_cluster.png"
+  },
+  {
+    "artifact": "contact_cluster_pdf",
+    "case_id": "k562_intra_chr14",
+    "description": "Pore-C contact map with k-means genomic cluster track.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/k562_intra_chr14/k562_intra_chr14_contact_cluster.pdf"
+  },
+  {
+    "artifact": "nodes",
+    "case_id": "comprehensive_gm12878_chr14",
+    "description": "Node-level hidden embedding, UMAP, A/B compartment, and k-means cluster table.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/comprehensive_gm12878_chr14/comprehensive_gm12878_chr14_embedding_nodes.tsv"
+  },
+  {
+    "artifact": "summary",
+    "case_id": "comprehensive_gm12878_chr14",
+    "description": "Case-level embedding analysis summary.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/comprehensive_gm12878_chr14/comprehensive_gm12878_chr14_embedding_summary.json"
+  },
+  {
+    "artifact": "arrays",
+    "case_id": "comprehensive_gm12878_chr14",
+    "description": "Compressed hidden embedding, UMAP, cluster, and coordinate arrays.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/comprehensive_gm12878_chr14/comprehensive_gm12878_chr14_embedding_arrays.npz"
+  },
+  {
+    "artifact": "umap",
+    "case_id": "comprehensive_gm12878_chr14",
+    "description": "Two-panel A/B and k-means UMAP plot.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/comprehensive_gm12878_chr14/comprehensive_gm12878_chr14_embedding_umap.png"
+  },
+  {
+    "artifact": "contact_cluster_png",
+    "case_id": "comprehensive_gm12878_chr14",
+    "description": "Pore-C contact map with k-means genomic cluster track.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/comprehensive_gm12878_chr14/comprehensive_gm12878_chr14_contact_cluster.png"
+  },
+  {
+    "artifact": "contact_cluster_pdf",
+    "case_id": "comprehensive_gm12878_chr14",
+    "description": "Pore-C contact map with k-means genomic cluster track.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/comprehensive_gm12878_chr14/comprehensive_gm12878_chr14_contact_cluster.pdf"
+  },
+  {
+    "artifact": "nodes",
+    "case_id": "comprehensive_k562_chr14",
+    "description": "Node-level hidden embedding, UMAP, A/B compartment, and k-means cluster table.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/comprehensive_k562_chr14/comprehensive_k562_chr14_embedding_nodes.tsv"
+  },
+  {
+    "artifact": "summary",
+    "case_id": "comprehensive_k562_chr14",
+    "description": "Case-level embedding analysis summary.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/comprehensive_k562_chr14/comprehensive_k562_chr14_embedding_summary.json"
+  },
+  {
+    "artifact": "arrays",
+    "case_id": "comprehensive_k562_chr14",
+    "description": "Compressed hidden embedding, UMAP, cluster, and coordinate arrays.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/comprehensive_k562_chr14/comprehensive_k562_chr14_embedding_arrays.npz"
+  },
+  {
+    "artifact": "umap",
+    "case_id": "comprehensive_k562_chr14",
+    "description": "Two-panel A/B and k-means UMAP plot.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/comprehensive_k562_chr14/comprehensive_k562_chr14_embedding_umap.png"
+  },
+  {
+    "artifact": "contact_cluster_png",
+    "case_id": "comprehensive_k562_chr14",
+    "description": "Pore-C contact map with k-means genomic cluster track.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/comprehensive_k562_chr14/comprehensive_k562_chr14_contact_cluster.png"
+  },
+  {
+    "artifact": "contact_cluster_pdf",
+    "case_id": "comprehensive_k562_chr14",
+    "description": "Pore-C contact map with k-means genomic cluster track.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/comprehensive_k562_chr14/comprehensive_k562_chr14_contact_cluster.pdf"
+  },
+  {
+    "artifact": "cluster_counts",
+    "case_id": "all",
+    "description": "Cluster count and compartment composition by case.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/figure3_cluster_counts.tsv"
+  },
+  {
+    "artifact": "figure3_embedding_panels_png",
+    "case_id": "all",
+    "description": "Combined 16-panel Figure 3 embedding reproduction.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/figure3_embedding_panels.png"
+  },
+  {
+    "artifact": "figure3_embedding_panels_pdf",
+    "case_id": "all",
+    "description": "Combined 16-panel Figure 3 embedding reproduction.",
+    "path": "/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/figure3_embeddings/figure3_embedding_panels.pdf"
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "genomic_bins": {
+    "A": 27021,
+    "B": 27029,
+    "C": 27064,
+    "TSS": 27036
+  },
+  "local_related_bins": {
+    "A": 9,
+    "B": 17,
+    "C": 52,
+    "TSS": 24
+  },
+  "pair_synergy": {
+    "A;B": {
+      "weaker_than_additive_repression": 9
+    },
+    "A;C": {
+      "stronger_than_additive_repression": 8,
+      "weaker_than_additive_repression": 1
+    },
+    "B;C": {
+      "stronger_than_additive_repression": 7,
+      "weaker_than_additive_repression": 2
+    }
+  },
+  "target_count": 4,
+  "target_gene": "MYB",
+  "tss_genomic_bin": 27036
+}
