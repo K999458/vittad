@@ -1,0 +1,58 @@
+{
+  "by_order": {
+    "3": {
+      "mean_score_delta": 0.1891677056648397,
+      "mean_span_delta": 73.2708260214299,
+      "override_case_count": 0,
+      "pair_count": 48437
+    },
+    "4": {
+      "mean_score_delta": 0.11447283150125893,
+      "mean_span_delta": 48.40276976341604,
+      "override_case_count": 1,
+      "pair_count": 29461
+    },
+    "5": {
+      "mean_score_delta": 0.07029001536451535,
+      "mean_span_delta": 33.9911732039516,
+      "override_case_count": 0,
+      "pair_count": 17107
+    },
+    "6": {
+      "mean_score_delta": 0.04336972184724437,
+      "mean_span_delta": 23.664121316412132,
+      "override_case_count": 1,
+      "pair_count": 9298
+    }
+  },
+  "cell_line": "GM12878",
+  "chrom": "chr14",
+  "device": "cuda:0",
+  "gpu_name": "NVIDIA GeForce RTX 3090",
+  "manifest_rows": 2,
+  "max_memory_allocated_gb": 0.6726,
+  "max_memory_reserved_gb": 0.8887,
+  "mean_score_delta": 0.13557523000031516,
+  "mean_span_delta": 55.38219418425165,
+  "model": "GM12878",
+  "override_case_count": 2,
+  "pair_count": 104303,
+  "region_end_bin": 16200,
+  "region_end_bp": 81000000,
+  "region_start_bin": 15200,
+  "region_start_bp": 76000000,
+  "scan_row_count": 831,
+  "selected_example_count": 1,
+  "split": "test",
+  "threads": 16,
+  "top_override_features": [
+    {
+      "feature": "H3K27me3",
+      "override_case_count": 1
+    },
+    {
+      "feature": "H4K20me1",
+      "override_case_count": 1
+    }
+  ]
+}

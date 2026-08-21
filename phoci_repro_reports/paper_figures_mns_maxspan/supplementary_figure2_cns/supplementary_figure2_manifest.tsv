@@ -1,0 +1,11 @@
+artifact	path	description
+pairs	/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/supplementary_figure2_cns/cns_perturbation_pairs.tsv	Positive/CNS perturbation scores for GM12878 chr14 76-81Mb, orders 3-6.
+examples	/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/supplementary_figure2_cns/selected_override_examples.tsv	Selected epigenetic override cases used for distance and feature panels.
+distance_scan	/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/supplementary_figure2_cns/cns_distance_scan.tsv	Replacement-node score scans around selected override cases.
+summary	/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/supplementary_figure2_cns/cns_perturbation_summary.json	CNS perturbation summary by order and override feature counts.
+supplementary_figure2a_c_png	/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/supplementary_figure2_cns/supplementary_figure2a_c_cns_scores.png	CNS score shift panels a-c.
+supplementary_figure2a_c_pdf	/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/supplementary_figure2_cns/supplementary_figure2a_c_cns_scores.pdf	CNS score shift panels a-c.
+supplementary_figure2d_f_png	/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/supplementary_figure2_cns/supplementary_figure2d_f_distance_scan.png	Distance scan panels d-f.
+supplementary_figure2d_f_pdf	/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/supplementary_figure2_cns/supplementary_figure2d_f_distance_scan.pdf	Distance scan panels d-f.
+supplementary_figure2h_j_png	/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/supplementary_figure2_cns/supplementary_figure2h_j_feature_deltas.png	Feature delta panels h-j.
+supplementary_figure2h_j_pdf	/store/zkyang/phoci_repro_reports/paper_figures_mns_maxspan/supplementary_figure2_cns/supplementary_figure2h_j_feature_deltas.pdf	Feature delta panels h-j.
