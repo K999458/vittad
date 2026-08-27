@@ -1,0 +1,17 @@
+torch>=1.9.0
+torchvision>=0.10.0
+numpy
+scipy
+pandas
+h5py
+opencv-python
+matplotlib
+tqdm
+Pillow
+pycocotools
+timm
+termcolor
+addict
+yapf
+cython
+submitit

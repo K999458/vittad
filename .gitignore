@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+*.so
+*.egg
+
+# Experiment artifacts
+outputs/
+logs/
+*.pth
+*.ckpt
+events.out.tfevents.*
+
+# Data (prepare locally, do not commit)
+data/
+models/weights/
+*.h5
+*.hic
+*.cool
+*.mcool
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+*.swp
+
+# Notebooks
+.ipynb_checkpoints/
