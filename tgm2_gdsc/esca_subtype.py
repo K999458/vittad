@@ -214,10 +214,12 @@ for tn, tg_, nn, ng in CMP:
                     n_genes=int(len(lfc)), verdict=verdict))
 
 # ---------- 箱线图 ----------
-BOX = [("GTEx\n食管黏膜", muc, "#8ec7e8"), ("GTEx\n食管肌层", mus, "#8ec7e8"),
-       ("GTEx\n连接部", gej, "#8ec7e8"), ("GTEx\n胃", gtex_sto, "#8ec7e8"),
-       ("TCGA\n癌旁", esca_n, "#b6dfa8"),
-       ("ESCC\n鳞癌", scc, "#e88b8b"), ("EAC\n腺癌", adc, "#c98be8")]
+BOX = [("GTEx 食管黏膜\n(鳞状上皮)", muc, "#8ec7e8"),
+       ("GTEx 食管肌层\n(平滑肌)", mus, "#f0b27a"),
+       ("GTEx 连接部\n(含平滑肌)", gej, "#f0b27a"),
+       ("GTEx 胃\n(柱状上皮)", gtex_sto, "#8ec7e8"),
+       ("TCGA 癌旁", esca_n, "#b6dfa8"),
+       ("ESCC 鳞癌", scc, "#e88b8b"), ("EAC 腺癌", adc, "#c98be8")]
 BOX = [(l, g, c) for l, g, c in BOX if len(g) >= 5]
 fig, ax = plt.subplots(figsize=(11, 6))
 data = [M[TG, [uidx[s] for s in g]] for _, g, _ in BOX]
@@ -237,10 +239,20 @@ ax.set_xticklabels([f"{l}\nn={len(d)}" for (l, _, _), d in zip(BOX, data)],
                    fontsize=9.5)
 ax.set_ylabel("TGM2  log2(TPM+0.001)", fontsize=11)
 ax.set_title("TGM2 在食管相关组织与 ESCA 亚型中的表达\n"
-             "正常食管黏膜（鳞状上皮）本身 TGM2 就很高，"
-             "所以整体 ESCA 对比正常会显得\"低表达\"",
-             fontsize=13, fontweight="bold")
+             "TGM2 是平滑肌/间质基因：GTEx 食管肌层与连接部很高(≈7.1)、"
+             "黏膜上皮低(4.4)\n"
+             "把整个 GTEx 食管(58% 是肌层+连接部)当对照，"
+             "上皮来源的肿瘤就会被误判成\"低表达\"",
+             fontsize=12.5, fontweight="bold")
 ax.grid(axis="y", ls=":", lw=0.6, alpha=0.5)
+ax.set_ylim(0.5, 10.5)
+from matplotlib.patches import Patch
+ax.legend(handles=[Patch(fc="#8ec7e8", ec="#333", label="GTEx 正常上皮"),
+                   Patch(fc="#f0b27a", ec="#333", label="GTEx 正常平滑肌"),
+                   Patch(fc="#b6dfa8", ec="#333", label="TCGA 癌旁"),
+                   Patch(fc="#e88b8b", ec="#333", label="ESCC 鳞癌"),
+                   Patch(fc="#c98be8", ec="#333", label="EAC 腺癌")],
+          loc="lower left", fontsize=9, ncol=2, framealpha=0.95)
 for s in ("top", "right"):
     ax.spines[s].set_visible(False)
 fig.tight_layout()
