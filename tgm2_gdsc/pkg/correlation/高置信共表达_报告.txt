@@ -1,0 +1,76 @@
+
+====================================================================================================
+### PAAD 胰腺癌   三重过滤后的高置信 TGM2 共表达基因：26 个
+====================================================================================================
+  交集基因 111 → 双校正存活 62 → 再要求 CCLE 复现 26
+
+  基因           TCGA rho     纯度校正      成纤维校正 CCLE rho  轴1 log2FC  轴2 log2FC
+  PMEPA1         +0.549   +0.582     +0.531   +0.346      +1.37      +0.59
+  ZBED2          +0.544   +0.576     +0.497   +0.372      +2.93      +1.04
+  CST6           +0.546   +0.559     +0.512   +0.592      +3.14      +1.27
+  ARNTL2         +0.515   +0.558     +0.485   +0.321      +1.16      +0.59
+  KRT7           +0.509   +0.536     +0.519   +0.350      +2.26      +1.13
+  LAMC2          +0.466   +0.534     +0.435   +0.397      +1.76      +1.14
+  MFI2           +0.487   +0.514     +0.468   +0.383      +1.81      +0.83
+  PLAU           +0.503   +0.502     +0.426   +0.464      +1.66      +0.72
+  EMP1           +0.481   +0.501     +0.400   +0.605      +1.34      +0.59
+  C16orf74       +0.445   +0.448     +0.395   +0.396      +1.77      +0.61
+  MYH16          +0.401   +0.445     +0.395   +0.454      +1.77      +1.41
+  P2RY2          +0.399   +0.439     +0.409   +0.346      +1.25      +0.80
+  VGLL1          +0.419   +0.425     +0.409   +0.345      +2.36      +1.22
+  TGFA           +0.381   +0.422     +0.385   +0.472      +1.14      +0.59
+  CGB5           +0.387   +0.421     +0.360   +0.356      +2.92      +1.78
+  PKD1L2         +0.374   +0.406     +0.317   +0.461      +1.48      +0.64
+  C4orf26        +0.389   +0.405     +0.370   +0.309      +1.14      +0.63
+  KRT80          +0.377   +0.398     +0.378   +0.523      +1.47      +0.82
+  CGB            +0.369   +0.398     +0.345   +0.401      +2.77      +1.69
+  SLC16A3        +0.374   +0.386     +0.357   +0.444      +1.06      +0.62
+  SLC2A1         +0.317   +0.382     +0.314   +0.509      +0.99      +0.84
+  LAMB3          +0.320   +0.381     +0.332   +0.366      +1.55      +1.12
+  ANLN           +0.314   +0.374     +0.312   +0.457      +1.22      +0.71
+  FOSL1          +0.314   +0.362     +0.307   +0.584      +1.14      +0.72
+  RHOD           +0.326   +0.347     +0.365   +0.475      +1.15      +0.69
+  ITGB4          +0.277   +0.340     +0.312   +0.339      +1.16      +0.79
+
+  [MSigDB_Hallmark_2020] FDR<0.05 共 3 条，Top8：
+      TNF-alpha Signaling via NF-kB                                  FDR=2.44e-03  命中 4：FOSL1,LAMB3,PLAU,PMEPA1
+      Estrogen Response Early                                        FDR=1.44e-02  命中 3：P2RY2,SLC2A1,RHOD
+      Apical Junction                                                FDR=1.44e-02  命中 3：LAMB3,ITGB4,LAMC2
+
+  [KEGG_2021_Human] FDR<0.05 共 11 条，Top8：
+      ECM-receptor interaction                                       FDR=8.75e-03  命中 3：LAMB3,ITGB4,LAMC2
+      PI3K-Akt signaling pathway                                     FDR=2.33e-02  命中 4：LAMB3,ITGB4,TGFA,LAMC2
+      Focal adhesion                                                 FDR=3.22e-02  命中 3：LAMB3,ITGB4,LAMC2
+      Renal cell carcinoma                                           FDR=3.27e-02  命中 2：SLC2A1,TGFA
+      Central carbon metabolism in cancer                            FDR=3.27e-02  命中 2：SLC2A1,SLC16A3
+      Pathways in cancer                                             FDR=3.39e-02  命中 4：LAMB3,SLC2A1,TGFA,LAMC2
+      Small cell lung cancer                                         FDR=3.70e-02  命中 2：LAMB3,LAMC2
+      Prostate cancer                                                FDR=3.70e-02  命中 2：PLAU,TGFA
+
+  [GO_Biological_Process_2023] FDR<0.05 共 2 条，Top8：
+      Epidermis Development (GO:0008544)                             FDR=2.44e-02  命中 3：LAMB3,EMP1,LAMC2
+      Cell-Substrate Junction Assembly (GO:0007044)                  FDR=4.09e-02  命中 2：ITGB4,RHOD
+
+  [Reactome_2022] FDR<0.05 共 12 条，Top8：
+      Type I Hemidesmosome Assembly R-HSA-446107                     FDR=2.04e-05  命中 3：LAMB3,ITGB4,LAMC2
+      Laminin Interactions R-HSA-3000157                             FDR=1.85e-04  命中 3：LAMB3,ITGB4,LAMC2
+      Non-integrin membrane-ECM Interactions R-HSA-3000171           FDR=8.38e-04  命中 3：LAMB3,ITGB4,LAMC2
+      Anchoring Fibril Formation R-HSA-2214320                       FDR=1.06e-03  命中 2：LAMB3,LAMC2
+      Assembly Of Collagen Fibrils And Other Multimeric Structures   FDR=1.36e-03  命中 3：LAMB3,ITGB4,LAMC2
+      Cell Junction Organization R-HSA-446728                        FDR=3.41e-03  命中 3：LAMB3,ITGB4,LAMC2
+      Collagen Formation R-HSA-1474290                               FDR=3.41e-03  命中 3：LAMB3,ITGB4,LAMC2
+      MET Activates PTK2 Signaling R-HSA-8874081                     FDR=3.41e-03  命中 2：LAMB3,LAMC2
+
+
+====================================================================================================
+### KIRC 肾透明细胞癌   三重过滤后的高置信 TGM2 共表达基因：3 个
+====================================================================================================
+  交集基因 170 → 双校正存活 13 → 再要求 CCLE 复现 3
+
+  基因           TCGA rho     纯度校正      成纤维校正 CCLE rho  轴1 log2FC  轴2 log2FC
+  FOXL1          +0.428   +0.436     +0.302   +0.462      +1.29      +0.69
+  SERPINE1       +0.468   +0.429     +0.344   +0.438      +1.85      +0.85
+  LOX            +0.431   +0.396     +0.339   +0.418      +1.79      +1.00
+
+
+[图] /store/zkyang/tgm2_gdsc/corr/高置信共表达基因.png

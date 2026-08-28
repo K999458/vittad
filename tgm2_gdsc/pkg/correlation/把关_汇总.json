@@ -1,0 +1,89 @@
+{
+ "null": {
+  "PAAD": {
+   "cn": "胰腺癌",
+   "p": 1.8786355320155557e-58,
+   "med_obs": 0.3534447814675364,
+   "med_null": 0.1160354526973745,
+   "frac_beat95": 0.5675675675675675
+  },
+  "KIRC": {
+   "cn": "肾透明细胞癌",
+   "p": 6.574744826454156e-51,
+   "med_obs": 0.2504967867447492,
+   "med_null": 0.10782411231328842,
+   "frac_beat95": 0.27647058823529413
+  }
+ },
+ "ccle": {
+  "PAAD": {
+   "cn": "胰腺癌",
+   "n": 99,
+   "n_lines": 41,
+   "n_same": 85,
+   "n_rep": 33,
+   "consist_rho": 0.32645223533237344,
+   "consist_p": 0.0009746506940344546,
+   "rep_genes": [
+    "EMP1",
+    "CST6",
+    "FOSL1",
+    "KRT80",
+    "C6orf15",
+    "SLC2A1",
+    "RHOD",
+    "TGFA",
+    "PLAU",
+    "PKD1L2",
+    "ANLN",
+    "MYH16",
+    "SLC16A3",
+    "SEMA7A",
+    "CGB",
+    "LAMC2",
+    "C16orf74",
+    "MFI2",
+    "ZBED2",
+    "LAMB3",
+    "IVL",
+    "CGB5",
+    "KRT7",
+    "UPK3B",
+    "PMEPA1",
+    "P2RY2",
+    "VGLL1",
+    "ITGB4",
+    "E2F7",
+    "ARNTL2",
+    "FGFBP1",
+    "EPHA2",
+    "C4orf26"
+   ]
+  },
+  "KIRC": {
+   "cn": "肾透明细胞癌",
+   "n": 137,
+   "n_lines": 33,
+   "n_same": 86,
+   "n_rep": 14,
+   "consist_rho": 0.22242809205579506,
+   "consist_p": 0.008990621812861537,
+   "rep_genes": [
+    "RNASET2",
+    "FOXL1",
+    "NFE2L3",
+    "SERPINE1",
+    "NLGN4Y",
+    "CHST1",
+    "KDELR3",
+    "LOX",
+    "TMEM44",
+    "C1QL1",
+    "NBL1",
+    "C5orf46",
+    "SPOCK1",
+    "ENAM"
+   ]
+  }
+ }
+}
