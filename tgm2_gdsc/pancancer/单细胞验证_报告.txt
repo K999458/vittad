@@ -1,0 +1,118 @@
+[0] CELLxGENE 覆盖组织 64 个
+
+================================================================================================
+胰腺  TGM2 各细胞类型阳性比例（所有疾病状态合并，细胞数 >= 150）
+================================================================================================
+  细胞类型                                       类别         阳性比例       细胞数
+  ------------------------------------------------------------------------------------------
+  endothelial cell of vascular tree          间质        12.6%       363
+  duct epithelial cell                       上皮         8.8%      5095
+  pancreatic ductal cell                     上皮         8.8%      5095
+  hematopoietic cell                         免疫         7.7%       629
+  leukocyte                                  免疫         7.5%       552
+  pancreatic A cell                          上皮         6.9%      9314
+  type A enteroendocrine cell                上皮         6.9%      9346
+  pancreatic stellate cell                   间质         6.6%      1018
+  fibroblast                                 间质         6.5%      1032
+  endothelial cell                           间质         6.1%       855
+  connective tissue cell                     其他         5.7%      1096
+  epithelial cell of exocrine pancreas       上皮         4.9%      6147
+  epithelial cell                            上皮         4.1%     19030
+  epithelial cell of pancreas                上皮         4.1%     17813
+  pancreatic endocrine cell                  上皮         3.7%     11666
+  enteroendocrine cell                       上皮         3.7%     11699
+  endocrine cell                             上皮         3.7%     11716
+  glandular epithelial cell                  上皮         3.3%     13046
+  secretory cell                             上皮         3.3%     13065
+  pancreatic D cell                          上皮         2.9%       579
+  type D enteroendocrine cell                上皮         2.9%       579
+  acinar cell                                上皮         1.7%      1347
+  CL:0000152                                 其他         1.5%      1042
+  pancreatic acinar cell                     上皮         1.5%      1042
+
+  该组织出现的疾病标签 8 个；其中恶性相关: 无
+
+================================================================================================
+肾  TGM2 各细胞类型阳性比例（所有疾病状态合并，细胞数 >= 150）
+================================================================================================
+  细胞类型                                       类别         阳性比例       细胞数
+  ------------------------------------------------------------------------------------------
+  myeloid lineage restricted progenitor cell 免疫        28.4%       271
+  MHC-II-positive classical monocyte         免疫        28.4%       271
+  hematopoietic precursor cell               免疫        28.4%       271
+  vasa recta ascending limb cell             其他        23.6%       277
+  CL:0000666                                 其他        22.3%       333
+  glomerular endothelial cell                间质        22.3%       333
+  CL:0000327                                 其他        21.5%       225
+  collagen secreting cell                    间质        21.5%       225
+  endothelial cell                           间质        20.6%     15610
+  vein endothelial cell                      间质        18.9%       363
+  CL:0001063                                 其他        17.3%       716
+  malignant cell                             恶性        17.3%       716
+  glomerular capillary endothelial cell      间质        17.3%       151
+  endothelial cell of vascular tree          间质        15.7%      1356
+  blood vessel endothelial cell              间质        15.7%       964
+  squamous epithelial cell                   上皮        15.7%       964
+  kidney capillary endothelial cell          间质        15.5%       760
+  stromal cell                               间质        14.8%       232
+  classical monocyte                         免疫        14.1%       291
+  capillary endothelial cell                 间质        13.9%       316
+  CL:2000008                                 其他        13.9%       316
+  kidney interstitial fibroblast             间质        11.6%      2592
+  fibroblast                                 间质         9.9%      2658
+  myofibroblast cell                         间质         9.2%      1078
+
+  该组织出现的疾病标签 13 个；其中恶性相关: ['clear cell renal carcinoma', 'nonpapillary renal cell carcinoma']
+
+  细胞类型                                   疾病                               阳性%        n
+  ----------------------------------------------------------------------------------------
+  endothelial cell                       nonpapillary renal cell carc   58.2%      708
+  endothelial cell                       clear cell renal carcinoma     37.5%     3435
+  collagen secreting cell                nonpapillary renal cell carc   33.3%      169
+  MHC-II-positive classical monocyte     nonpapillary renal cell carc   28.3%      270
+  epithelial cell                        nonpapillary renal cell carc   25.6%     1622
+  kidney interstitial fibroblast         normal                         24.6%     2002
+  vasa recta ascending limb cell         normal                         23.6%      277
+  glomerular endothelial cell            normal                         22.3%      333
+  fibroblast                             normal                         20.1%     2037
+  vein endothelial cell                  normal                         18.9%      363
+  classical monocyte                     nonpapillary renal cell carc   18.9%      276
+  epithelial cell of proximal tubule     nonpapillary renal cell carc   18.2%      899
+  columnar/cuboidal epithelial cell      nonpapillary renal cell carc   18.2%      900
+  kidney cortex tubule cell              nonpapillary renal cell carc   18.1%      910
+  epithelial cell of nephron             nonpapillary renal cell carc   18.1%      911
+  endothelial cell                       normal                         18.0%     6231
+  kidney epithelial cell                 nonpapillary renal cell carc   17.9%      912
+  malignant cell                         nonpapillary renal cell carc   17.3%      716
+  glomerular capillary endothelial cell  normal                         17.3%      151
+  connective tissue cell                 nonpapillary renal cell carc   16.7%      205
+  endothelial cell of vascular tree      normal                         15.7%     1353
+  blood vessel endothelial cell          normal                         15.7%      964
+  squamous epithelial cell               normal                         15.7%      964
+  kidney capillary endothelial cell      normal                         15.5%      760
+  capillary endothelial cell             normal                         13.9%      316
+  kidney interstitial cell               normal                         12.9%     2507
+
+================================================================================================
+食管  TGM2 各细胞类型阳性比例（所有疾病状态合并，细胞数 >= 150）
+================================================================================================
+  细胞类型                                       类别         阳性比例       细胞数
+  ------------------------------------------------------------------------------------------
+  endothelial cell of lymphatic vessel       间质        35.4%       398
+  endothelial cell of vascular tree          间质        25.3%      1578
+  endothelial cell                           间质        25.0%      1661
+  contractile cell                           其他        16.3%      1918
+  CL:0000187                                 其他        16.3%      1806
+  smooth muscle cell                         间质        16.3%      1806
+  enteric smooth muscle cell                 间质        15.3%      1191
+  vein endothelial cell                      间质        15.2%       163
+  blood vessel endothelial cell              间质        15.1%       402
+  squamous epithelial cell                   上皮        15.1%       402
+  connective tissue cell                     其他         2.6%       376
+  fibroblast                                 间质         2.5%       352
+  epithelial cell                            上皮         1.9%      1703
+  esophagus                                  其他         0.0%      4141
+
+  该组织出现的疾病标签 2 个；其中恶性相关: 无
+
+[图] /store/zkyang/tgm2_gdsc/pancancer/单细胞_TGM2_细胞类型.png
