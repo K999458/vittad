@@ -1,0 +1,40 @@
+[0] 待取基因 18682 个 ENSG / 18214 个 symbol
+[0] PAAD (胰腺癌) 肿瘤 179  正常 171 (GTEx 167 + 癌旁 4)
+[0] KIRC (肾透明细胞癌) 肿瘤 531  正常 100 (GTEx 28 + 癌旁 72)
+[0] ESCA (食管癌) 肿瘤 182  正常 840 (GTEx 827 + 癌旁 13)
+[0] 需取表达的样本并集 2003
+    取表达 1/94 批  用时 7s  预计还需 639s
+    取表达 11/94 批  用时 56s  预计还需 421s
+    取表达 21/94 批  用时 99s  预计还需 343s
+    取表达 31/94 批  用时 132s  预计还需 268s
+    取表达 41/94 批  用时 165s  预计还需 213s
+    取表达 51/94 批  用时 197s  预计还需 166s
+    取表达 61/94 批  用时 231s  预计还需 125s
+    取表达 71/94 批  用时 263s  预计还需 85s
+    取表达 81/94 批  用时 296s  预计还需 48s
+    取表达 91/94 批  用时 382s  预计还需 13s
+    取表达 94/94 批  用时 393s  预计还需 0s
+[1] 表达矩阵 (18682, 2003) 已缓存
+
+===== PAAD 胰腺癌  肿瘤 179 vs 正常 171  基因 15612 =====
+  显著上调 10638  显著下调 613
+  TGM2: log2FC=+3.86 (FC=14.5x)  FDR=9.81e-47  上调排名 1219/15612 (前 7.8%)  ★ 显著高表达
+        肿瘤均值 6.99  正常均值 3.13  (log2 TPM)
+  上调 Top10: CST1, UGT1A10, MMP12, KLK6, IGFL2, CGB5, TMPRSS4, CEACAM5, TFF1, CST4
+  下调 Top10: RBPJL, CLPS, SYCN, PNLIPRP1, CELA3B, CELA2A, AMY2A, REG1P, CPA1, CELA3A
+
+===== KIRC 肾透明细胞癌  肿瘤 531 vs 正常 100  基因 15496 =====
+  显著上调 2521  显著下调 1964
+  TGM2: log2FC=+1.37 (FC=2.6x)  FDR=5.66e-18  上调排名 1715/15496 (前 11.1%)  ★ 显著高表达
+        肿瘤均值 6.70  正常均值 5.33  (log2 TPM)
+  上调 Top10: FABP7, C5orf46, CA9, OR2A4, FABP6, ADAM18, CD70, SFTA1P, SLC6A3, NPTX2
+  下调 Top10: UMOD, AQP2, FXYD4, ATP6V1G3, CLDN8, KNG1, BSND, FOXI1, TMEM207, SLC12A1
+
+===== ESCA 食管癌  肿瘤 182 vs 正常 840  基因 15745 =====
+  显著上调 4869  显著下调 1964
+  TGM2: log2FC=-0.35 (FC=0.8x)  FDR=1.57e-03  上调排名 12222/15745 (前 77.6%)  ▽ 低表达
+        肿瘤均值 5.38  正常均值 5.73  (log2 TPM)
+  上调 Top10: CST1, RNU11, RSC1A1, MMP12, MMP13, HOXC11, MMP1, MMP10, HOXC13, HOXA13
+  下调 Top10: PNLIP, MYOC, CTRB1, CPA1, ADH1B, AMY2A, PRM1, CELA3A, DEFB124, MUSTN1
+
+[图] /store/zkyang/tgm2_gdsc/pancancer/火山图_GTEx对照_目标癌种.png

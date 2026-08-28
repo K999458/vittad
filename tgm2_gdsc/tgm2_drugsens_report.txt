@@ -1,0 +1,195 @@
+================================================================================================
+A. CCLE  |  TGM2 (log2 RPKM+1) vs CCLE_NP24 药敏 ActArea/IC50
+================================================================================================
+[A] TGM2 有值细胞系: 1075
+[A] CCLE 药敏: 504 细胞系, 97 个字段
+
+  说明：CCLE 药敏字段含 ActArea(活性面积,越大=越敏感) 与 IC50/EC50。
+        对 IC50 类字段 rho>0 = TGM2高更耐药；对 ActArea 类字段 rho<0 = TGM2高更耐药。
+
+  字段                                            n     rho          P        FDR
+  --------------------------------------------------------------------------
+  Panobinostat:HDAC_IC50 (uM)                 472   0.366   2.15e-16   1.03e-14 *
+  Panobinostat:HDAC_TargetEC50 (uM)           472   0.355   1.98e-15   6.35e-14 *
+  Topotecan:TOP1_TargetEC50 (uM)              449   0.330   7.34e-13   1.76e-11 *
+  Irinotecan:TOP1_TargetEC50 (uM)             294   0.312   4.88e-08   3.35e-07 *
+  L-685458:GS_IC50 (uM)                       463   0.306   1.80e-11   2.58e-10 *
+  Irinotecan:TOP1_IC50 (uM)                   301   0.289   3.51e-07   2.11e-06 *
+  PD-0332991:CDK4_IC50 (uM)                   409   0.275   1.51e-08   1.21e-07 *
+  Topotecan:TOP1_IC50 (uM)                    476   0.274   1.22e-09   1.17e-08 *
+  Paclitaxel:TUBB1_Amax                       475   0.250   3.50e-08   2.59e-07 *
+  TAE684:ALK_TargetEC50 (uM)                  378   0.247   1.21e-06   6.12e-06 *
+  L-685458:GS_Amax                            463   0.238   2.27e-07   1.45e-06 *
+  PD-0332991:CDK4_Amax                        409   0.238   1.18e-06   6.12e-06 *
+  Paclitaxel:TUBB1_IC50 (uM)                  475   0.224   8.02e-07   4.53e-06 *
+  AZD6244:MEK_TargetEC50 (uM)                 244   0.201   1.58e-03   3.53e-03 *
+  TKI258:FGFR_IC50 (uM)                       476   0.198   1.32e-05   5.50e-05 *
+  PHA-665752:c-MET_IC50 (uM)                  475   0.196   1.70e-05   6.77e-05 *
+  PHA-665752:c-MET_Amax                       475   0.196   1.76e-05   6.77e-05 *
+  PF2341066:c-MET_TargetEC50 (uM)             317   0.187   7.98e-04   1.97e-03 *
+  Irinotecan:TOP1_Amax                        301   0.182   1.52e-03   3.48e-03 *
+  PF2341066:c-MET_IC50 (uM)                   476   0.178   9.15e-05   3.03e-04 *
+  AEW541:IGF1R_TargetEC50 (uM)                375   0.178   5.28e-04   1.41e-03 *
+  Paclitaxel:TUBB1_TargetEC50 (uM)            411   0.178   2.88e-04   8.48e-04 *
+  Topotecan:TOP1_Amax                         476   0.174   1.37e-04   4.38e-04 *
+  TKI258:FGFR_Amax                            476   0.165   2.91e-04   8.48e-04 *
+  Sorafenib:RTK_Amax                          475   0.161   4.26e-04   1.20e-03 *
+  Sorafenib:RTK_IC50 (uM)                     475   0.160   4.60e-04   1.26e-03 *
+  17-AAG:HSP90_Amax                           475   0.153   8.00e-04   1.97e-03 *
+  Nutlin-3:MDM2_IC50 (uM)                     476   0.151   9.74e-04   2.34e-03 *
+  Erlotinib:EGFR_TargetEC50 (uM)              251   0.146   2.09e-02   3.79e-02 *
+  TAE684:ALK_IC50 (uM)                        476   0.144   1.64e-03   3.58e-03 *
+  PF2341066:c-MET_Amax                        476   0.134   3.47e-03   7.24e-03 *
+  Nilotinib:ABL_IC50 (uM)                     396   0.132   8.50e-03   1.67e-02 *
+  PD-0332991:CDK4_TargetEC50 (uM)             220   0.129   5.55e-02   9.52e-02
+  PD-0325901:MEK_ActArea                      476   0.114   1.30e-02   2.50e-02 *
+  PLX4720:RAF_TargetEC50 (uM)                 159   0.104   1.94e-01   2.82e-01
+  AEW541:IGF1R_IC50 (uM)                      475   0.085   6.39e-02   1.08e-01
+  RAF265:RAF_Amax                             433   0.074   1.24e-01   1.98e-01
+  AZD0530:ABL_ActArea                         476   0.072   1.17e-01   1.90e-01
+  AZD6244:MEK_ActArea                         475   0.070   1.27e-01   2.00e-01
+  Lapatinib:EGFR_IC50 (uM)                    476   0.068   1.39e-01   2.15e-01
+  Nilotinib:ABL_Amax                          396   0.068   1.78e-01   2.68e-01
+  PD-0325901:MEK_TargetEC50 (uM)              348   0.061   2.55e-01   3.49e-01
+  Lapatinib:EGFR_TargetEC50 (uM)              283   0.058   3.31e-01   4.24e-01
+  TAE684:ALK_Amax                             476   0.052   2.53e-01   3.49e-01
+  Nutlin-3:MDM2_Amax                          476   0.023   6.14e-01   7.47e-01
+  L-685458:GS_TargetEC50 (uM)                 135   0.020   8.16e-01   8.81e-01
+  TKI258:FGFR_TargetEC50 (uM)                 372   0.019   7.16e-01   8.38e-01
+  PLX4720:RAF_ActArea                         468   0.018   6.93e-01   8.21e-01
+  ZD-6474:EGFR_TargetEC50 (uM)                300   0.016   7.85e-01   8.66e-01
+  Nutlin-3:MDM2_TargetEC50 (uM)                96   0.015   8.82e-01   9.31e-01
+  Nilotinib:ABL_TargetEC50 (uM)               234   0.012   8.54e-01   9.11e-01
+  ZD-6474:EGFR_ActArea                        468   0.005   9.07e-01   9.36e-01
+  AZD0530:ABL_TargetEC50 (uM)                 290   0.004   9.48e-01   9.69e-01
+  LBW242:XIAP_TargetEC50 (uM)                  93   0.001   9.92e-01   9.92e-01
+  AEW541:IGF1R_Amax                           475  -0.001   9.77e-01   9.87e-01
+  RAF265:RAF_ActArea                          433  -0.006   9.02e-01   9.36e-01
+  AZD6244:MEK_IC50 (uM)                       475  -0.011   8.16e-01   8.81e-01
+  RAF265:RAF_IC50 (uM)                        433  -0.014   7.79e-01   8.66e-01
+  Lapatinib:EGFR_Amax                         476  -0.014   7.59e-01   8.57e-01
+  ZD-6474:EGFR_IC50 (uM)                      468  -0.014   7.58e-01   8.57e-01
+  LBW242:XIAP_ActArea                         475  -0.015   7.51e-01   8.57e-01
+  Erlotinib:EGFR_ActArea                      475  -0.023   6.23e-01   7.47e-01
+  Erlotinib:EGFR_IC50 (uM)                    475  -0.025   5.93e-01   7.39e-01
+  RAF265:RAF_TargetEC50 (uM)                  374  -0.026   6.19e-01   7.47e-01
+  Sorafenib:RTK_TargetEC50 (uM)               195  -0.039   5.92e-01   7.39e-01
+  Lapatinib:EGFR_ActArea                      476  -0.047   3.07e-01   3.98e-01
+  17-AAG:HSP90_TargetEC50 (uM)                460  -0.048   3.00e-01   3.94e-01
+  17-AAG:HSP90_IC50 (uM)                      475  -0.051   2.70e-01   3.60e-01
+  PLX4720:RAF_IC50 (uM)                       468  -0.056   2.29e-01   3.24e-01
+  LBW242:XIAP_IC50 (uM)                       475  -0.059   2.00e-01   2.86e-01
+  17-AAG:HSP90_ActArea                        475  -0.061   1.87e-01   2.77e-01
+  ZD-6474:EGFR_Amax                           468  -0.066   1.57e-01   2.39e-01
+  PD-0325901:MEK_IC50 (uM)                    476  -0.074   1.07e-01   1.78e-01
+  AZD0530:ABL_IC50 (uM)                       476  -0.096   3.62e-02   6.32e-02
+  Nutlin-3:MDM2_ActArea                       476  -0.098   3.19e-02   5.67e-02
+  AEW541:IGF1R_ActArea                        475  -0.110   1.68e-02   3.09e-02 *
+  LBW242:XIAP_Amax                            475  -0.110   1.66e-02   3.09e-02 *
+  PHA-665752:c-MET_TargetEC50 (uM)             88  -0.120   2.65e-01   3.59e-01
+  Panobinostat:HDAC_Amax                      472  -0.122   7.97e-03   1.59e-02 *
+  PLX4720:RAF_Amax                            468  -0.132   4.20e-03   8.58e-03 *
+  TAE684:ALK_ActArea                          476  -0.138   2.57e-03   5.48e-03 *
+  PHA-665752:c-MET_ActArea                    475  -0.146   1.41e-03   3.29e-03 *
+  AZD6244:MEK_Amax                            475  -0.154   7.80e-04   1.97e-03 *
+  Erlotinib:EGFR_Amax                         475  -0.170   1.95e-04   6.02e-04 *
+  TKI258:FGFR_ActArea                         476  -0.186   4.36e-05   1.49e-04 *
+  PF2341066:c-MET_ActArea                     476  -0.187   4.10e-05   1.46e-04 *
+  AZD0530:ABL_Amax                            476  -0.188   3.52e-05   1.30e-04 *
+  PD-0325901:MEK_Amax                         476  -0.200   1.08e-05   4.73e-05 *
+  Sorafenib:RTK_ActArea                       475  -0.204   7.37e-06   3.37e-05 *
+  Nilotinib:ABL_ActArea                       396  -0.236   2.00e-06   9.59e-06 *
+  Paclitaxel:TUBB1_ActArea                    475  -0.293   6.90e-11   8.27e-10 *
+  L-685458:GS_ActArea                         463  -0.305   1.88e-11   2.58e-10 *
+  Topotecan:TOP1_ActArea                      476  -0.310   4.60e-12   8.83e-11 *
+  PD-0332991:CDK4_ActArea                     409  -0.311   1.20e-10   1.28e-09 *
+  Irinotecan:TOP1_ActArea                     301  -0.340   1.40e-09   1.23e-08 *
+  Panobinostat:HDAC_ActArea                   472  -0.387   2.46e-18   2.37e-16 *
+
+================================================================================================
+B. NCI60  |  TGM2 (Affy U133Plus2 RMA) vs DTP GI50 Z-score
+   注意 DTP Z-score 越大 = 越敏感，故 rho<0 = TGM2高更耐药
+================================================================================================
+[B] NCI60 表达: 60 细胞系; TGM2 探针命中 ['201042_at', '211003_x_at', '211573_x_at']
+[B] TGM2 表达可用细胞系 59
+[B] NCI60 DTP: 62 细胞系, 263 个化合物
+[B] 全量扫描 262 个化合物（其中临床常用药 44 个）
+
+  [B] 汇总：262 个化合物可评估；方向为「TGM2高→耐药」的 60 个（23%）；FDR<0.05 显著 161 个，其中耐药方向 8 个
+
+  --- Top25「TGM2 高 → 耐药」（rho 最负）---
+  化合物                                               n     rho          P        FDR
+  ----------------------------------------------------------------------------------
+  Paclitaxel_418145                                59  -0.440   4.82e-04   1.15e-03 *
+  Actinomycin D_538571                             59  -0.361   4.91e-03   9.33e-03 *
+  Carmustine_479311                                59  -0.338   8.79e-03   1.60e-02 *
+  Vinblastine_101900                               59  -0.330   1.06e-02   1.89e-02 *
+  Eribulin mesilate_529374                         59  -0.313   1.59e-02   2.81e-02 *
+  okadaic acid_516878                              59  -0.309   1.74e-02   3.00e-02 *
+  Arsenic trioxide_529128                          59  -0.288   2.69e-02   4.47e-02 *
+  Mithramycin_85982                                59  -0.282   3.03e-02   4.96e-02 *
+  Denileukin Diftitox Ontak_525769                 59  -0.276   3.45e-02   5.54e-02
+  Fenretinide_577595                               59  -0.273   3.66e-02   5.85e-02
+  PX-316_530691                                    59  -0.257   4.98e-02   7.81e-02
+  Hypothemycin_576295                              59  -0.232   7.71e-02   1.13e-01
+  6-Mercaptopurine_538245                          59  -0.211   1.09e-01   1.55e-01
+  geldanamycin analog_569254                       59  -0.209   1.12e-01   1.58e-01
+  Melphalan_301128                                 59  -0.207   1.15e-01   1.62e-01
+  Tanespimycin_574817                              59  -0.196   1.36e-01   1.89e-01
+  Methotrexate_67627                               59  -0.190   1.49e-01   2.05e-01
+  Pipobroman_86412                                 59  -0.187   1.57e-01   2.16e-01
+  Teniposide_416461                                59  -0.183   1.65e-01   2.24e-01
+  Fluorouracil_82653                               59  -0.182   1.67e-01   2.25e-01
+  Alvespimycin_529444                              59  -0.182   1.68e-01   2.25e-01
+  Mithramycin_559313                               59  -0.174   1.88e-01   2.50e-01
+  Daunorubicin_301154                              59  -0.168   2.03e-01   2.69e-01
+  7-Tert-butyldimethylsilyl-10-hydroxycamptothe    59  -0.162   2.21e-01   2.90e-01
+  Daunorubicin_551815                              59  -0.156   2.38e-01   3.11e-01
+
+  --- 临床常用药单独列出 ---
+  化合物                                               n     rho          P        FDR  方向
+  --------------------------------------------------------------------------------------------
+  Paclitaxel_418145                                59  -0.440   4.82e-04   1.15e-03  TGM2高→耐药 *
+  Vinblastine_101900                               59  -0.330   1.06e-02   1.89e-02  TGM2高→耐药 *
+  Methotrexate_67627                               59  -0.190   1.49e-01   2.05e-01  TGM2高→耐药
+  Fluorouracil_82653                               59  -0.182   1.67e-01   2.25e-01  TGM2高→耐药
+  Irinotecan_487652                                59  -0.154   2.44e-01   3.15e-01  TGM2高→耐药
+  Doxorubicin_301181                               59  -0.131   3.21e-01   3.95e-01  TGM2高→耐药
+  Cyclophosphamide_87150                           59  -0.131   3.24e-01   3.97e-01  TGM2高→耐药
+  Mitomycin_87663                                  59  -0.115   3.87e-01   4.61e-01  TGM2高→耐药
+  Carboplatin_568180                               59  -0.092   4.88e-01   5.73e-01  TGM2高→耐药
+  Mitomycin_423375                                 59  -0.091   4.94e-01   5.76e-01  TGM2高→耐药
+  Cisplatin_301178                                 59  -0.085   5.22e-01   5.97e-01  TGM2高→耐药
+  Topotecan_580652                                 59  -0.076   5.68e-01   6.44e-01  TGM2高→耐药
+  Cytarabine_549052                                59   0.003   9.81e-01   9.81e-01  TGM2高→敏感
+  Gemcitabine_486649                               59   0.018   8.92e-01   9.16e-01  TGM2高→敏感
+  Everolimus_48430111                              59   0.044   7.43e-01   8.10e-01  TGM2高→敏感
+  Bleomycin_301184                                 59   0.179   1.76e-01   2.35e-01  TGM2高→敏感
+  Vinblastine_144075282                            59   0.233   7.56e-02   1.11e-01  TGM2高→敏感
+  Vincristine_112141                               59   0.243   6.34e-02   9.60e-02  TGM2高→敏感
+  Cytarabine_144476                                59   0.253   5.35e-02   8.25e-02  TGM2高→敏感
+  Docetaxel_494081                                 59   0.253   5.33e-02   8.25e-02  TGM2高→敏感
+  Temsirolimus_520036                              59   0.286   2.82e-02   4.64e-02  TGM2高→敏感 *
+  Fluorouracil_144075048                           59   0.288   2.68e-02   4.47e-02  TGM2高→敏感 *
+  Docetaxel_144076180                              59   0.333   9.94e-03   1.80e-02  TGM2高→敏感 *
+  Vincristine_144075912                            59   0.355   5.81e-03   1.08e-02  TGM2高→敏感 *
+  Irinotecan_48427687                              59   0.373   3.58e-03   7.10e-03  TGM2高→敏感 *
+  Vinblastine_397349                               59   0.389   2.35e-03   4.81e-03  TGM2高→敏感 *
+  Pazopanib_144074186                              59   0.411   1.24e-03   2.70e-03  TGM2高→敏感 *
+  Topotecan_144075973                              59   0.416   1.04e-03   2.32e-03  TGM2高→敏感 *
+  Dasatinib_144076207                              59   0.440   4.81e-04   1.15e-03  TGM2高→敏感 *
+  Oxaliplatin_569872                               59   0.446   3.97e-04   1.03e-03  TGM2高→敏感 *
+  Bleomycin_144075635                              59   0.448   3.68e-04   9.75e-04  TGM2高→敏感 *
+  Sunitinib_91148451                               59   0.454   3.08e-04   8.41e-04  TGM2高→敏感 *
+  Mitomycin_144074891                              59   0.478   1.27e-04   4.11e-04  TGM2高→敏感 *
+  Etoposide_427063                                 59   0.484   1.02e-04   3.53e-04  TGM2高→敏感 *
+  Imatinib_91146949                                59   0.489   8.54e-05   3.09e-04  TGM2高→敏感 *
+  Paclitaxel_144075668                             59   0.493   7.34e-05   2.96e-04  TGM2高→敏感 *
+  Axitinib_144075334                               59   0.504   4.73e-05   2.10e-04  TGM2高→敏感 *
+  Pazopanib_48431568                               59   0.517   2.81e-05   1.67e-04  TGM2高→敏感 *
+  Bortezomib_518755                                59   0.522   2.20e-05   1.51e-04  TGM2高→敏感 *
+  Erlotinib_534851                                 59   0.523   2.16e-05   1.51e-04  TGM2高→敏感 *
+  Dasatinib_48429642                               59   0.530   1.58e-05   1.48e-04  TGM2高→敏感 *
+  Etoposide_144075353                              59   0.532   1.47e-05   1.43e-04  TGM2高→敏感 *
+  Irinotecan_144076208                             59   0.537   1.17e-05   1.38e-04  TGM2高→敏感 *
+  Doxorubicin_144075893                            59   0.578   1.63e-06   1.07e-04  TGM2高→敏感 *

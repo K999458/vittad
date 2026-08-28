@@ -1,0 +1,32 @@
+[0] ESCA 临床表型里的组织学字段: ['histological_type', 'icd_o_3_histology', 'neoplasm_histologic_grade']
+[0] 亚型分布: {'Esophagus Adenocarcinoma, NOS': 89, 'Esophagus Squamous Cell Carcinoma': 96}
+[0] GTEX_phenotype 字段: ['_cohort', '_gender', '_patient', '_primary_site', 'body_site_detail (SMTSD)', 'sampleID']
+[0] 用字段 body_site_detail (SMTSD)；食管相关亚区: ['Esophagus - Gastroesophageal Junction', 'Esophagus - Mucosa', 'Esophagus - Muscularis']
+
+[1] ESCA 肿瘤 182：鳞癌 93  腺癌 89  未分类 0
+[1] GTEx 食管 653：黏膜 271  肌层 245  连接部 137；GTEx 胃 174
+
+==============================================================================
+TGM2 表达中位数  log2(TPM+0.001)
+==============================================================================
+  GTEx 食管黏膜（鳞状上皮）            n=271   中位数 4.38
+  GTEx 食管肌层                  n=245   中位数 7.14
+  GTEx 食管胃连接部                n=137   中位数 7.18
+  GTEx 胃                     n=174   中位数 4.98
+  TCGA ESCA 癌旁               n=13    中位数 4.84
+  TCGA ESCA 鳞癌 ESCC          n=93    中位数 4.53
+  TCGA ESCA 腺癌 EAC           n=89    中位数 6.13
+
+==============================================================================
+亚型 vs 对应正常组织的 TGM2 差异（含全基因组中位数中心化校正）
+==============================================================================
+  ESCC 鳞癌 (n=93) vs GTEx 食管黏膜 (n=271):
+      TGM2 log2FC=-0.24  FDR=5.23e-02  排名 9120/15672 (前 58.2%)  — 无差异
+  ESCC 鳞癌 (n=93) vs GTEx 食管黏膜+癌旁 (n=284):
+      TGM2 log2FC=-0.26  FDR=4.64e-02  排名 9282/15667 (前 59.2%)  ▽ 低表达
+  EAC 腺癌 (n=89) vs GTEx 连接部+胃 (n=311):
+      TGM2 log2FC=-0.43  FDR=1.02e-02  排名 9744/15800 (前 61.7%)  ▽ 低表达
+  EAC 腺癌 (n=89) vs GTEx 胃 (n=174):
+      TGM2 log2FC=+0.21  FDR=1.17e-01  排名 6113/15771 (前 38.8%)  — 无差异
+
+[图] /store/zkyang/tgm2_gdsc/pancancer/箱线图_ESCA亚型_TGM2.png

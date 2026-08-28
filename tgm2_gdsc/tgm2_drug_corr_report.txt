@@ -1,0 +1,200 @@
+============================================================================================
+TGM2 表达 vs 药物 IC50 相关性  |  CCLE RNA-seq (log2 RPKM+1) x GDSC1/2 fitted LN_IC50
+rho > 0 = TGM2 越高 IC50 越高 = 越耐药（支持课题假设）
+============================================================================================
+
+############################################################################################
+### PAN-CANCER  |  可评估药物 664 个  |  FDR<0.05 显著 664 个  |  rho>0(耐药方向) 550/664 = 83%
+############################################################################################
+
+药物                              n     rho          P        FDR  靶点/通路
+--------------------------------------------------------------------------------------------
+AZD5991                       483   0.522   4.54e-35   1.51e-32  MCL1 / Apoptosis regulation
+GSK626616AC                   483   0.476   1.03e-28   1.51e-32  DYRK1A / Other, kinases
+AZD1208                       485   0.474   1.47e-28   1.51e-32  PIM1, PIM2, PIM3 / Other, kinases
+Vorinostat                    612   0.472   3.12e-35   1.51e-32  HDAC inhibitor Class / Chromatin histone acetylat
+GSK2830371                    499   0.462   9.92e-28   1.51e-32  WIP1 / Other
+UNC0638                       498   0.460   1.67e-27   1.51e-32  G9A, GLP / Chromatin histone methylat
+Sorafenib                     611   0.458   5.90e-33   1.51e-32  PDGFR, KIT, VEGFR, R / Other, kinases
+Venetoclax                    611   0.453   3.27e-32   1.51e-32  BCL2 / Apoptosis regulation
+LMB_AB1                       483   0.452   1.18e-25   1.51e-32  ADRA1A, ADRB1 / Other
+Axitinib                      613   0.448   1.55e-31   1.51e-32  PDGFR, KIT, VEGFR / RTK signaling
+Motesanib                     606   0.446   5.85e-31   1.51e-32  VEGFR, RET, KIT, PDG / RTK signaling
+GSK2830371A                   483   0.442   1.51e-24   1.51e-32  PPM1D / Other
+GSK3337463A                   483   0.442   1.59e-24   1.51e-32  NIK / Other, kinases
+LMB_AB2                       483   0.439   3.74e-24   1.51e-32  GADD34 / Unclassified
+EPZ004777                     616   0.438   2.48e-30   1.51e-32  DOT1L / Chromatin histone methylat
+EPZ5676                       613   0.438   3.83e-30   1.51e-32  DOT1L / Chromatin histone methylat
+CD532                         591   0.437   6.56e-29   1.51e-32  AURKA / Mitosis
+ACY-1215                      590   0.433   2.24e-28   1.51e-32  HDAC6 / Chromatin histone acetylat
+Entinostat                    572   0.432   2.22e-27   1.51e-32  HDAC1, HDAC3 / Chromatin histone acetylat
+Remodelin                     261   0.432   2.88e-13   1.51e-32  nan / Unclassified
+Veliparib                     606   0.429   1.46e-28   1.51e-32  PARP1, PARP2 / Genome integrity
+Nelarabine                    483   0.428   6.36e-23   1.51e-32  nan / DNA replication
+776928                        482   0.427   8.56e-23   1.51e-32  nan / Unclassified
+AGI-6780                      567   0.423   4.72e-26   1.51e-32  IDH2 R140Q mutant / Metabolism
+Zoledronate                   483   0.418   8.43e-22   1.51e-32    / Other
+GSK2256098C                   483   0.415   1.59e-21   1.51e-32  FAK1 / Cytoskeleton
+GSK2110183B                   483   0.415   1.59e-21   1.51e-32  AKT1, AKT2, AKT3 / PI3K/MTOR signaling
+Lenalidomide                  606   0.414   1.48e-26   1.51e-32  CRBN / Protein stability and degr
+TAF1_5496                     485   0.413   2.06e-21   1.51e-32  TAF1 / Other
+N29087-69-1                   505   0.413   3.48e-22   1.51e-32  nan / Unclassified
+
+  --- 反方向（TGM2 高 = 更敏感）Top10 ---
+torin2                         78  -0.475   1.09e-05   1.51e-32  MTOR, ATM, ATR, DNAP / PI3K/MTOR signaling
+EphB4_9721                    585  -0.441   2.94e-29   1.51e-32  EPHB4 / RTK signaling
+THZ-1-87                       62  -0.441   3.34e-04   1.51e-32  BTK, BMX / Other, kinases
+HG-6-71-01                     78  -0.436   6.55e-05   1.51e-32  DDR1, DDR2, SRC / Other, kinases
+Trametinib                    560  -0.409   5.17e-24   1.51e-32  MEK1, MEK2 / ERK MAPK signaling
+THZ-2-98-01                    62  -0.343   6.33e-03   1.51e-32  IRAK1 / Unclassified
+Dasatinib                     217  -0.342   2.49e-07   1.51e-32  ABL, SRC, Ephrins, P / RTK signaling
+Dasatinib                     613  -0.309   4.91e-15   1.51e-32  ABL, SRC, Ephrins, P / Other, kinases
+Refametinib                   599  -0.295   1.56e-13   1.51e-32  MEK1, MEK2 / ERK MAPK signaling
+PD0325901                     587  -0.295   3.11e-13   1.51e-32  MEK1, MEK2 / ERK MAPK signaling
+
+############################################################################################
+### KIRC  |  可评估药物 596 个  |  FDR<0.05 显著 0 个  |  rho>0(耐药方向) 409/596 = 69%
+############################################################################################
+
+药物                              n     rho          P        FDR  靶点/通路
+--------------------------------------------------------------------------------------------
+AZD4547                        12   0.678   1.53e-02   9.88e-01  FGRF1, FGFR2, FGFR3 / RTK signaling
+BDILV000379a                   10   0.636   4.79e-02   9.88e-01  BAZ2A, BAZ2B / Chromatin histone acetylat
+AGI-6780                       12   0.608   3.58e-02   9.88e-01  IDH2 R140Q mutant / Metabolism
+Dabrafenib                     11   0.600   5.10e-02   9.88e-01  BRAF / ERK MAPK signaling
+MG-132                         13   0.599   3.06e-02   9.88e-01  Proteasome, CAPN1 / Protein stability and degr
+ERK_6604                       10   0.576   8.16e-02   9.88e-01  ERK1,ERK2 / ERK MAPK signaling
+BDOCA000347a                   10   0.564   8.97e-02   9.88e-01  BRPF1, BRPF2, BRPF3 / Chromatin histone acetylat
+Alisertib                      13   0.555   4.90e-02   9.88e-01  AURKA / Mitosis
+Doramapimod                    13   0.555   4.90e-02   9.88e-01  p38, JNK2 / JNK and p38 signaling
+alpha-lipoic acid              11   0.555   7.67e-02   9.88e-01  Metabolism / Metabolism
+MCT1_6447                      12   0.552   6.25e-02   9.88e-01  MCT1 / Cell cycle
+Dabrafenib                     13   0.544   5.46e-02   9.88e-01  BRAF / ERK MAPK signaling
+CRT0105950                     12   0.524   8.00e-02   9.88e-01  JNK1, JNK2, JNK3 / JNK and p38 signaling
+IAP_5620                       12   0.517   8.49e-02   9.88e-01  IAP / Other
+GSK3337463A                    10   0.515   1.28e-01   9.88e-01  NIK / Other, kinases
+ETP-45835                      13   0.511   7.43e-02   9.88e-01  MNK1, MNK2 / Other, kinases
+GSK1904529A                    13   0.505   7.80e-02   9.88e-01  IGF1R, IR / RTK signaling
+BAM7                           13   0.505   7.80e-02   9.88e-01  Bax activator / Other
+Obatoclax Mesylate             11   0.500   1.17e-01   9.88e-01  BCL2, BCL-XL, BCL-W, / Apoptosis regulation
+AZD7762                        13   0.500   8.19e-02   9.88e-01  CHEK1, CHEK2 / Cell cycle
+GSK1904529A                    13   0.500   8.19e-02   9.88e-01  IGF1R, IR / IGF1R signaling
+Foretinib                      13   0.500   8.19e-02   9.88e-01  MET, KDR, TIE2, VEGF / RTK signaling
+Ara-G                          12   0.490   1.06e-01   9.88e-01  Anti-metabolite / Other
+Docetaxel                      13   0.478   9.85e-02   9.88e-01  Microtubule stabilis / Mitosis
+Olaparib                       13   0.473   1.03e-01   9.88e-01  PARP1, PARP2 / Genome integrity
+STF-62247                      12   0.469   1.24e-01   9.88e-01  Autophagy inducer / Other
+Fulvestrant                    12   0.469   1.24e-01   9.88e-01  ESR1 / Hormone-related
+CRT0160829                     11   0.464   1.51e-01   9.88e-01  CDC7 / DNA replication
+BX795                          13   0.456   1.17e-01   9.88e-01  TBK1, PDK1 (PDPK1),  / Other, kinases
+AZD6094                        12   0.455   1.38e-01   9.88e-01  MET / RTK signaling
+
+  --- 反方向（TGM2 高 = 更敏感）Top10 ---
+FY012                          11  -0.609   4.67e-02   9.88e-01  nan / Unclassified
+Piperlongumine                 11  -0.536   8.90e-02   9.88e-01  Induces reactive oxy / Other
+AZD6482                        13  -0.473   1.03e-01   9.88e-01  PI3Kbeta / PI3K/MTOR signaling
+(5Z)-7-Oxozeaenol              11  -0.464   1.51e-01   9.88e-01  TAK1 / Other, kinases
+Bryostatin 1                   13  -0.462   1.12e-01   9.88e-01  PKC / Other
+Selumetinib                    12  -0.448   1.45e-01   9.88e-01  MEK1, MEK2 / ERK MAPK signaling
+Veliparib                      13  -0.429   1.44e-01   9.88e-01  PARP1, PARP2 / Genome integrity
+Dacinostat                     13  -0.418   1.56e-01   9.88e-01  HDAC1 / Chromatin histone acetylat
+FY026                          11  -0.400   2.23e-01   9.88e-01  nan / Unclassified
+SB216763                       12  -0.392   2.08e-01   9.88e-01  GSK3A, GSK3B / WNT signaling
+
+############################################################################################
+### ESCA  |  可评估药物 642 个  |  FDR<0.05 显著 0 个  |  rho>0(耐药方向) 421/642 = 66%
+############################################################################################
+
+药物                              n     rho          P        FDR  靶点/通路
+--------------------------------------------------------------------------------------------
+QL-VIII-58                     12   0.720   8.24e-03   9.71e-01  MTOR, ATR / Other
+Pevonedistat                   23   0.578   3.86e-03   9.71e-01  NAE / Other
+Motesanib                      24   0.575   3.30e-03   9.71e-01  VEGFR, RET, KIT, PDG / RTK signaling
+Doramapimod                    23   0.554   6.05e-03   9.71e-01  p38, JNK2 / JNK and p38 signaling
+AZD1208                        24   0.548   5.59e-03   9.71e-01  PIM1, PIM2, PIM3 / Other, kinases
+Mirin                          22   0.494   1.94e-02   9.71e-01  MRE11 / Genome integrity
+I-BRD9                         23   0.480   2.04e-02   9.71e-01  BRD9 / Chromatin other
+Flavopiridol                   23   0.473   2.25e-02   9.71e-01  CDK / Cell cycle
+JNK Inhibitor VIII             24   0.464   2.23e-02   9.71e-01  JNK / JNK and p38 signaling
+AZD3759                        24   0.444   2.96e-02   9.71e-01  EGFR / EGFR signaling
+Uprosertib                     24   0.444   2.96e-02   9.71e-01  AKT1, AKT2, AKT3 / PI3K/MTOR signaling
+Temsirolimus                   23   0.438   3.67e-02   9.71e-01  MTOR / PI3K/MTOR signaling
+KIN001-042                     24   0.437   3.30e-02   9.71e-01  GSK3B / WNT signaling
+GDC0810                        23   0.430   4.06e-02   9.71e-01  ESR1, ESR2 / Hormone-related
+IWP-2                          22   0.417   5.33e-02   9.71e-01  PORCN / WNT signaling
+PFI-1                          24   0.409   4.74e-02   9.71e-01  BRD4 / Chromatin other
+SB590885                       24   0.409   4.74e-02   9.71e-01  BRAF / ERK MAPK signaling
+Avagacestat                    24   0.408   4.79e-02   9.71e-01  Amyloid beta20, Amyl / Other
+GSK2110183B                    20   0.405   7.69e-02   9.71e-01  AKT1, AKT2, AKT3 / PI3K/MTOR signaling
+I-CBP112                       21   0.401   7.14e-02   9.71e-01  EP300, CBP / Chromatin histone acetylat
+JQ1                            24   0.397   5.51e-02   9.71e-01  BRD2, BRD3, BRD4, BR / Chromatin other
+Tamoxifen                      23   0.391   6.48e-02   9.71e-01  ESR1 / Hormone-related
+MCT1_6447                      24   0.383   6.43e-02   9.71e-01  MCT1 / Cell cycle
+PFI-3                          22   0.374   8.61e-02   9.71e-01  PB1, SMARCA4, SMARCA / Chromatin other
+Gefitinib                      23   0.373   8.00e-02   9.71e-01  EGFR / EGFR signaling
+KIN001-244                     24   0.367   7.78e-02   9.71e-01  PDK1 / Other, kinases
+AGI-6780                       22   0.363   9.68e-02   9.71e-01  IDH2 R140Q mutant / Metabolism
+PFI-1                          24   0.362   8.24e-02   9.71e-01  BRD4 / Chromatin other
+Ipatasertib                    23   0.362   8.99e-02   9.71e-01  AKT1, AKT, AKT3 / PI3K/MTOR signaling
+UMI-77                         20   0.359   1.20e-01   9.71e-01  MCL1 / Apoptosis regulation
+
+  --- 反方向（TGM2 高 = 更敏感）Top10 ---
+BI-2536                         9  -0.800   9.63e-03   9.71e-01  PLK1, PLK2, PLK3 / Cell cycle
+CMK                             9  -0.750   1.99e-02   9.71e-01  RSK2 / Other, kinases
+Entinostat                      8  -0.690   5.80e-02   9.71e-01  HDAC1, HDAC3 / Chromatin histone acetylat
+WH-4-023                        9  -0.683   4.24e-02   9.71e-01  SRC, LCK / Other, kinases
+WZ-1-84                         9  -0.683   4.24e-02   9.71e-01  BMX / Other, kinases
+A-770041                        9  -0.617   7.69e-02   9.71e-01  LCK, FYN / Other, kinases
+Z-LLNle-CHO                     9  -0.583   9.92e-02   9.71e-01  gamma-secretase / Other
+Dasatinib                       9  -0.467   2.05e-01   9.71e-01  ABL, SRC, Ephrins, P / RTK signaling
+Eg5_9814                       19  -0.447   5.48e-02   9.71e-01  KSP11 / Other
+Entinostat                     22  -0.436   4.23e-02   9.71e-01  HDAC1, HDAC3 / Chromatin histone acetylat
+
+############################################################################################
+### PAAD  |  可评估药物 605 个  |  FDR<0.05 显著 0 个  |  rho>0(耐药方向) 429/605 = 71%
+############################################################################################
+
+药物                              n     rho          P        FDR  靶点/通路
+--------------------------------------------------------------------------------------------
+BAY AKT1                       19   0.616   5.00e-03   9.77e-01  AKT1, AKT2, AKT3 / Apoptosis regulation
+PFI-3                          22   0.571   5.53e-03   9.77e-01  PB1, SMARCA4, SMARCA / Chromatin other
+TW 37                          12   0.552   6.25e-02   9.77e-01  BCL2, BCL-XL, MCL1 / Apoptosis regulation
+Idelalisib                     26   0.497   9.84e-03   9.77e-01  PI3Kdelta / PI3K/MTOR signaling
+BMS-754807                     24   0.488   1.56e-02   9.77e-01  IGF1R, IR / IGF1R signaling
+TAK-715                        25   0.478   1.55e-02   9.77e-01  p38alpha, p38beta / JNK and p38 signaling
+BDILV000379a                   22   0.455   3.36e-02   9.77e-01  BAZ2A, BAZ2B / Chromatin histone acetylat
+A-366                          26   0.453   2.01e-02   9.77e-01  EHMT1, EHMT2 / Chromatin histone methylat
+PLX-4720                       26   0.442   2.38e-02   9.77e-01  BRAF / ERK MAPK signaling
+IWP-2                          22   0.441   3.99e-02   9.77e-01  PORCN / WNT signaling
+GSK1070916                     23   0.432   3.96e-02   9.77e-01  AURKA, AURKC / Mitosis
+HG-5-88-01                      8   0.429   2.89e-01   9.77e-01  TAK1, M4K2 / Other, kinases
+SGC-CBP30                      22   0.421   5.12e-02   9.77e-01  EP300, CBP / Chromatin histone acetylat
+Bryostatin 1                   26   0.417   3.42e-02   9.77e-01  PKC / Other
+XMD11-85h                       8   0.405   3.20e-01   9.77e-01  LRRK2, ERK5 / Other, kinases
+QL-VIII-58                      8   0.405   3.20e-01   9.77e-01  MTOR, ATR / Other
+GSK269962A                     25   0.404   4.53e-02   9.77e-01  ROCK1, ROCK2 / Cytoskeleton
+Voxtalisib                     25   0.400   4.76e-02   9.77e-01  PI3K (class 1), DNAP / PI3K/MTOR signaling
+Vorinostat                     26   0.393   4.71e-02   9.77e-01  HDAC inhibitor Class / Chromatin histone acetylat
+BMS-345541                     26   0.393   4.71e-02   9.77e-01  IKK1, IKK2 / Other, kinases
+Sorafenib                      26   0.392   4.76e-02   9.77e-01  PDGFR, KIT, VEGFR, R / Other, kinases
+RO-3306                        26   0.391   4.80e-02   9.77e-01  CDK1 / Cell cycle
+Pictilisib                     26   0.389   4.93e-02   9.77e-01  PI3K (class 1) / PI3K/MTOR signaling
+ZM447439                       25   0.389   5.45e-02   9.77e-01  AURKA, AURKB / Mitosis
+RO-3306                        26   0.383   5.33e-02   9.77e-01  CDK1 / Cell cycle
+Picolinici-acid                22   0.382   7.91e-02   9.77e-01  Inflammatory related / Other
+FMK                            26   0.378   5.66e-02   9.77e-01  RSK / Other, kinases
+Ispinesib Mesylate             26   0.376   5.85e-02   9.77e-01  KSP / Mitosis
+BIBR-1532                      26   0.376   5.85e-02   9.77e-01  TERT / Genome integrity
+Wnt-C59                        22   0.374   8.61e-02   9.77e-01  PORCN / WNT signaling
+
+  --- 反方向（TGM2 高 = 更敏感）Top10 ---
+PARP_9495                      26  -0.478   1.36e-02   9.77e-01  PARP1, PARP2, PARP7 / Genome integrity
+Cetuximab                      20  -0.451   4.59e-02   9.77e-01  EGFR / EGFR signaling
+Osimertinib                    26  -0.447   2.21e-02   9.77e-01  EGFR / EGFR signaling
+Dasatinib                      26  -0.395   4.59e-02   9.77e-01  ABL, SRC, Ephrins, P / Other, kinases
+IAP_7638                       26  -0.355   7.56e-02   9.77e-01  IAP / Other
+AZD1332                        22  -0.354   1.06e-01   9.77e-01  NTRK1, NTRK2, NTRK3 / RTK signaling
+Luminespib                     26  -0.339   8.97e-02   9.77e-01  HSP90 / Protein stability and degr
+Temsirolimus                   23  -0.336   1.17e-01   9.77e-01  MTOR / PI3K/MTOR signaling
+993-D2                         19  -0.333   1.63e-01   9.77e-01  MKNK1, MKNK2 / Other, kinases
+TWS119                         25  -0.319   1.20e-01   9.77e-01  GSK3 / WNT signaling

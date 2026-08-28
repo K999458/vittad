@@ -1,0 +1,46 @@
+[
+ {
+  "tumor": "ESCC 鳞癌",
+  "n_tumor": 93,
+  "normal": "GTEx 食管黏膜",
+  "n_normal": 271,
+  "log2FC": -0.2427387237548828,
+  "fdr": 0.05227182438721483,
+  "rank": 9120,
+  "n_genes": 15672,
+  "verdict": "— 无差异"
+ },
+ {
+  "tumor": "ESCC 鳞癌",
+  "n_tumor": 93,
+  "normal": "GTEx 食管黏膜+癌旁",
+  "n_normal": 284,
+  "log2FC": -0.2623652219772339,
+  "fdr": 0.04643172280331944,
+  "rank": 9282,
+  "n_genes": 15667,
+  "verdict": "▽ 低表达"
+ },
+ {
+  "tumor": "EAC 腺癌",
+  "n_tumor": 89,
+  "normal": "GTEx 连接部+胃",
+  "n_normal": 311,
+  "log2FC": -0.4290158748626709,
+  "fdr": 0.010192383627315576,
+  "rank": 9744,
+  "n_genes": 15800,
+  "verdict": "▽ 低表达"
+ },
+ {
+  "tumor": "EAC 腺癌",
+  "n_tumor": 89,
+  "normal": "GTEx 胃",
+  "n_normal": 174,
+  "log2FC": 0.205704927444458,
+  "fdr": 0.11716775223147119,
+  "rank": 6113,
+  "n_genes": 15771,
+  "verdict": "— 无差异"
+ }
+]

@@ -1,0 +1,45 @@
+[0] toil hub 数据集 54
+    表达: ['gtex_RSEM_gene_tpm', 'target_RSEM_gene_tpm', 'tcga_RSEM_gene_tpm', 'TcgaTargetGtex_rsem_gene_tpm', 'tcga_target_no_normal_rsem_gene_tpm']
+    表型: ['GTEX_phenotype', 'TARGET_phenotype', 'TcgaTargetGTEX_phenotype.txt', 'TCGA_TARGET_phenotype']
+[1] 表达样本 19131；TGM2 字段 ['ENSG00000198959.11']
+[1] 表型字段: ['_gender', '_primary_site', '_sample_type', '_study', 'detailed_category', 'primary disease or tissue', 'sampleID']
+[1] 使用表型字段: ['_primary_site', '_sample_type', '_study', 'detailed_category']
+[1] TGM2 取到 19131 / 19131 个样本
+[2] 字段映射: site=_primary_site type=_sample_type study=_study disease=detailed_category
+
+[3] TCGA 疾病类别 34 种；GTEx 组织 32 种
+    GTEx 组织样例: ['', 'Adipose Tissue', 'Adrenal Gland', 'Bladder', 'Blood', 'Blood Vessel', 'Bone Marrow', 'Brain', 'Breast', 'Cervix Uteri', 'Colon', 'Esophagus', 'Fallopian Tube', 'Heart']
+    TCGA 类别样例: ['', 'Acute Myeloid Leukemia', 'Adrenocortical Cancer', 'Bladder Urothelial Carcinoma', 'Brain Lower Grade Glioma', 'Breast Invasive Carcinoma', 'Cervical & Endocervical Cancer', 'Cholangiocarcinoma']
+
+======================================================================================================================
+TGM2 表达：TCGA 肿瘤 vs (GTEx 正常 + TCGA 癌旁)  —— Toil 统一流程 log2(TPM+0.001)
+======================================================================================================================
+
+TCGA 疾病                                   正常组织             肿瘤n  GTEx    癌旁     肿瘤中位     正常中位  log2FC        FDR  判定
+----------------------------------------------------------------------------------------------------------------------
+Pancreatic Adenocarcinoma                 Pancreas         179   167     4     7.24     3.11    4.13   1.98e-46  ★ 显著高表达
+Skin Cutaneous Melanoma                   Skin             469   812     1     3.99     2.15    1.84   3.06e-41  ★ 显著高表达
+Kidney Clear Cell Carcinoma               Kidney           531    28    72     6.80     5.38    1.42   5.35e-18  ★ 显著高表达
+Stomach Adenocarcinoma                    Stomach          414   174    36     6.35     5.00    1.34   2.41e-16  ★ 显著高表达
+Cholangiocarcinoma                        -                 36     0     9     6.83     5.51    1.32   5.26e-02  — 无差异
+Testicular Germ Cell Tumor                Testis           154   165     0     3.88     2.77    1.11   1.32e-15  ★ 显著高表达
+Rectum Adenocarcinoma                     Colon             93   308    10     5.59     4.94    0.66   1.44e-03  ✓ 高表达
+Kidney Papillary Cell Carcinoma           Kidney           289    28    32     5.80     5.28    0.52   6.59e-02  — 无差异
+Glioblastoma Multiforme                   Brain            166  1152     5     3.81     3.49    0.32   2.14e-03  ✓ 高表达
+Colon Adenocarcinoma                      Colon            290   308    41     5.11     4.88    0.22   1.86e-01  — 无差异
+Sarcoma                                   Muscle           262   396     2     4.41     4.39    0.01   9.75e-01  — 无差异
+Brain Lower Grade Glioma                  Brain            523  1152     0     3.42     3.49   -0.07   3.91e-01  — 无差异
+Breast Invasive Carcinoma                 Breast          1099   179   113     4.20     4.41   -0.22   7.41e-03  ▽ 低表达
+Acute Myeloid Leukemia                    Blood            173   444     0     0.86     1.09   -0.22   5.85e-03  ▽ 低表达
+Ovarian Serous Cystadenocarcinoma         Ovary            427    88     0     4.71     4.99   -0.27   1.68e-01  — 无差异
+Prostate Adenocarcinoma                   Prostate         496   100    52     6.35     6.78   -0.43   2.23e-05  ▽ 低表达
+Thyroid Carcinoma                         Thyroid          512   279    59     4.70     5.42   -0.72   7.23e-10  ▽ 低表达
+Liver Hepatocellular Carcinoma            Liver            371   110    50     5.64     6.75   -1.11   1.25e-16  ▼ 显著低表达
+Esophageal Carcinoma                      Esophagus        182   653    13     5.38     6.57   -1.19   1.63e-05  ▼ 显著低表达
+Adrenocortical Cancer                     Adrenal Gland     77   128     0     4.21     5.51   -1.30   9.49e-10  ▼ 显著低表达
+Bladder Urothelial Carcinoma              Bladder          407     9    19     5.02     6.92   -1.90   1.97e-04  ▼ 显著低表达
+Lung Adenocarcinoma                       Lung             515   288    59     6.79     8.70   -1.90   3.04e-99  ▼ 显著低表达
+Kidney Chromophobe                        -                 66     0    25     3.05     5.41   -2.36   1.46e-10  ▼ 显著低表达
+Head & Neck Squamous Cell Carcinoma       Esophagus        520   653    44     3.93     6.43   -2.50   2.52e-63  ▼ 显著低表达
+Uterine Corpus Endometrioid Carcinoma     Uterus           181    78    23     4.80     7.95   -3.15   6.58e-38  ▼ 显著低表达
+Lung Squamous Cell Carcinoma              Lung             498   288    50     5.40     8.76   -3.36  7.61e-121  ▼ 显著低表达
